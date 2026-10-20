@@ -827,6 +827,62 @@ body {
   box-shadow: 0 0 12px var(--accent-glow);
 }
 
+/* Builder's Ethos Banner */
+.ethos-banner {
+  background: linear-gradient(135deg, rgba(0, 255, 204, 0.05), rgba(168, 85, 247, 0.05));
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 35px;
+  backdrop-filter: blur(var(--glass-blur));
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -15px var(--accent-glow);
+}
+.ethos-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent-neon), var(--accent-purple));
+}
+.ethos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-subtle);
+}
+.ethos-quote {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-pure);
+  font-style: italic;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.ethos-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sig-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent-neon);
+  font-size: 1rem;
+}
+.sig-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
 /* Philosophy Pillars Grid */
 .pillars-grid {
   display: grid;

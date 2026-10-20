@@ -33,19 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const personaData = {
     gtm: {
-      tag: 'MODE: GTM & GROWTH OBSESSED',
+      tag: 'MODE: GTM & EMPATHETIC ADOPTION',
       heading: 'Where <span class="highlight-gtm">GTM Velocity</span> meets <span class="highlight-design">Thoughtful Design</span> and <span class="highlight-ai">Deterministic AI</span>.',
-      desc: 'I am a <strong>GTM & Design Engineer</strong> with a deep obsession with product distribution, self-serve funnels, and high-craft UI/UX. I build software that converts at first glance, feels buttery smooth, and solves critical real-world friction.',
+      desc: 'I am a <strong>GTM &amp; Design Engineer</strong> focused on making powerful software easy to discover and love. I craft welcoming user onboarding, transparent product analytics, and high-craft UI/UX that solves critical real-world friction with zero dark patterns.',
       ascii: `  ____  _     _                     ____             _   
  / ___|| |__ (_)_   ____ _ _ __ ___ |  _ \\ __ _ _   _| |_ 
  \\___ \\| '_ \\| \\ \\ / / _\` | '_ \` _ \\| |_) / _\` | | | | __|
   ___) | | | | |\\ V / (_| | | | | | |  _ < (_| | |_| | |_ 
  |____/|_| |_|_| \\_/ \\__,_|_| |_| |_|_| \\_\\__,_|\\__,_|\\__|
  ========================================================
- [★] FOCUS    : GTM Engineering × High-Craft Product Design
- [★] FUNNELS  : Self-Serve Onramps · Conversion · Viral Loops
+ [★] FOCUS    : Thoughtful Distribution × High-Craft Design
+ [★] ONBOARD  : Welcoming Onramps · Real Value · Zero Dark Patterns
  [★] AI STACK : FastAPI · LangChain · Nemotron · Deterministic Core
- [★] LOCATION : Pune, India // Open for Forward Deployed Roles`
+ [★] VALUES   : Technology as a Human Right · Authentic Purpose`
     },
     design: {
       tag: 'MODE: PRODUCT DESIGN & HIGH-CRAFT UI/UX',
@@ -215,21 +215,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const terminalScreen = document.getElementById('terminalScreen');
 
   const termResponses = {
-    help: `Available commands:
-  • <span class="highlight">gtm</span>       : Why I'm obsessed with GTM engineering & distribution
-  • <span class="highlight">design</span>    : My Product Design & UI/UX principles
-  • <span class="highlight">projects</span>  : Direct links to my 5 flagship architectures
-  • <span class="highlight">whoami</span>    : Background, education & hackathon ranking
-  • <span class="highlight">contact</span>   : Signal transmission coordinates
-  • <span class="highlight">clear</span>     : Wipe terminal buffer`,
-
-    gtm: `[GTM ENGINEERING PHILOSOPHY]
+    menu: `[ SHIVAM RAUT — INTERACTIVE DOSSIER ]
 -------------------------------------------------------
-Code without adoption is zero-yield. I build at the revenue
-boundary: self-serve activation loops, viral campus referrals,
-and product analytics that drop onboarding friction to zero.
-Proven in PensionQuest (AIR #2) where gamified funnels solved
-a national 92% youth abandonment problem.`,
+  • <span class="highlight">whoami</span>     : Background, education &amp; national ranking
+  • <span class="highlight">gtm</span>        : GTM engineering &amp; thoughtful distribution
+  • <span class="highlight">design</span>     : Product Design &amp; UI/UX philosophy
+  • <span class="highlight">analytics</span>  : Product telemetry &amp; measurement
+  • <span class="highlight">projects</span>   : All 6 flagship architectures
+  • <span class="highlight">opensource</span> : Open source ethos &amp; volunteering conviction
+  • <span class="highlight">pulses</span>     : Pulses.life healthcare platform
+  • <span class="highlight">kalpataru</span>  : Kalpataru Labs AgriTech ecosystem
+  • <span class="highlight">contact</span>    : Ways to connect &amp; collaborate
+  • <span class="highlight">clear</span>      : Clear terminal screen`,
+
+    explore: `[ EXPLORING SHIVAM'S DOSSIER ]
+-------------------------------------------------------
+  Sections available to explore:
+  • <span class="highlight">whoami</span>     : Who I am — Shivam Raut, Pune
+  • <span class="highlight">gtm</span>        : Thoughtful distribution &amp; GTM
+  • <span class="highlight">design</span>     : High-craft UI/UX principles
+  • <span class="highlight">projects</span>   : Flagship architectures (6 systems)
+  • <span class="highlight">opensource</span> : Open source &amp; grassroots volunteering
+  • <span class="highlight">contact</span>    : Connect and collaborate`,
+
+    help: `[ DOSSIER DIRECTORY ]
+-------------------------------------------------------
+  • <span class="highlight">menu</span>       : Full topic directory
+  • <span class="highlight">explore</span>    : Browse what's available
+  • <span class="highlight">projects</span>   : All flagship architectures
+  • <span class="highlight">opensource</span> : Open source &amp; volunteering
+  • <span class="highlight">contact</span>    : Connect &amp; collaborate`,
+
+    gtm: `[GTM & THOUGHTFUL DISTRIBUTION]
+-------------------------------------------------------
+Great technology deserves to reach the people who need it.
+I build welcoming onramps, frictionless discovery flows,
+and respectful product analytics—helping users experience
+genuine value without manipulation or dark patterns.
+
+Proven in PensionQuest (AIR #2): gamified funnels helped
+92% of young Indians finally understand their NPS accounts.`,
 
     design: `[PRODUCT DESIGN & UI/UX MANIFESTO]
 -------------------------------------------------------
@@ -262,12 +287,14 @@ Taste is the ultimate moat.
 • Ethos    : "If it doesn't work on 2G in Bundelkhand, redesign it"
 • Moat     : Compounding data flywheel across 12 products`,
 
-    opensource: `[ETHOS: OPEN SOURCE & VOLUNTEERING]
+    opensource: `[OPEN SOURCE & GRASSROOTS VOLUNTEERING]
 -------------------------------------------------------
-• Conviction : Technology access is a fundamental human right
+• Conviction : Technology is a fundamental human right
+               — belonging to everyone, whenever they need it
 • Community  : SSoC Season 5 Contributor (LocalMind & TokenSense)
-• Volunteer  : Mentoring student builders & local grassroots tech
-• Standard   : Zero faking, zero performative hype, pure craft`,
+• Volunteer  : Mentoring student builders at grassroots scale
+• Standard   : Zero faking, zero performative hype, pure craft
+• Why        : Every open source contribution is shared dignity`,
 
     analytics: `[EXPERTISE: PRODUCT ANALYTICS]
 -------------------------------------------------------
@@ -279,10 +306,12 @@ Taste is the ultimate moat.
     whoami: `[DOSSIER: SHIVAM RAUT]
 -------------------------------------------------------
 • Roles      : GTM & Design Engineer | AI Systems Builder
+• Location   : Pune, India
 • Education  : Computer Engineering @ MIT AOE Pune
 • Hackathons : All India Rank #2 @ PFRDA National Hackathon
 • Certs      : Oracle Certified Associate SQL | IIT Ropar AI Minor
-• OpenSource : SSoC Season 5 Contributor (LocalMind)`,
+• OpenSource : SSoC Season 5 Contributor (LocalMind & TokenSense)
+• Values     : Authentic purpose, open access, zero faking`,
 
     contact: `[TRANSMISSION CHANNELS]
 -------------------------------------------------------
@@ -312,7 +341,7 @@ Taste is the ultimate moat.
         if (termResponses[inputVal]) {
           resLine.innerHTML = `<pre style="font-family: inherit; white-space: pre-wrap;">${termResponses[inputVal]}</pre>`;
         } else {
-          resLine.innerHTML = `command not recognized: <strong>${escapeHtml(inputVal)}</strong>. Type <span class="highlight">help</span> for available commands.`;
+          resLine.innerHTML = `Command not found: <strong>${escapeHtml(inputVal)}</strong>. Type <span class="highlight">menu</span> or <span class="highlight">explore</span> to see what's available.`;
         }
         terminalScreen.appendChild(resLine);
       }
