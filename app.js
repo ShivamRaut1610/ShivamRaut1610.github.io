@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // 3. Persona Switcher Engine (GTM / Design / AI)
-  const personaBtns = document.querySelectorAll('.persona-btn');
+  const personaBtns = document.querySelectorAll('.persona-btn, .m-persona-btn');
   const heroHeading = document.getElementById('heroHeading');
   const heroDesc = document.getElementById('heroDesc');
   const currentPersonaTag = document.getElementById('currentPersonaTag');
@@ -96,12 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   personaBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      personaBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
       const persona = btn.getAttribute('data-persona');
-      const data = personaData[persona];
+      personaBtns.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-persona') === persona);
+      });
 
+      const data = personaData[persona];
       if (data) {
         if (heroHeading) heroHeading.innerHTML = data.heading;
         if (heroDesc) heroDesc.innerHTML = data.desc;
@@ -375,6 +375,15 @@ Taste is the ultimate moat.
   termResponses.bio = termResponses.whoami;
   termResponses.social = termResponses.contact;
   termResponses.links = termResponses.contact;
+  termResponses.email = termResponses.contact;
+  termResponses.substack = termResponses.contact;
+  termResponses.instagram = termResponses.contact;
+  termResponses.behance = termResponses.contact;
+  termResponses.twitter = termResponses.contact;
+  termResponses.x = termResponses.contact;
+  termResponses.github = termResponses.contact;
+  termResponses.linkedin = termResponses.contact;
+  termResponses.resume = termResponses.whoami;
 
   if (terminalForm && terminalInput && terminalScreen) {
     terminalForm.addEventListener('submit', (e) => {
@@ -441,7 +450,8 @@ Taste is the ultimate moat.
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('open');
     });
 
@@ -449,6 +459,20 @@ Taste is the ultimate moat.
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
       });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+      }
     });
   }
 

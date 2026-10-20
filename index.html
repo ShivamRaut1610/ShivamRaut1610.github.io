@@ -79,8 +79,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=2.6">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=2.8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body class="theme-obsidian">
   <!-- Interactive Background Canvas & Grid Overlay -->
@@ -108,10 +108,29 @@
   <!-- Navigation -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#hero" class="nav-brand" title="Shivam Raut — GTM & Design Engineer">
-        <div class="nav-brand-logo">
-          <span class="logo-text">SR</span>
-          <span class="logo-dot"></span>
+      <a href="#hero" class="nav-brand" title="Shivam Raut — GTM &amp; Design Engineer">
+        <div class="nav-brand-logo" aria-hidden="true">
+          <svg class="brand-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="9" fill="url(#logoBgGrad)" stroke="var(--border-glow)" stroke-width="1.2"/>
+            <!-- Cyber Bracket Corners -->
+            <path d="M5 11V6a2 2 0 0 1 2-2h5" stroke="var(--accent-neon)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28 4h5a2 2 0 0 1 2 2v5" stroke="var(--accent-neon)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+            <path d="M35 29v5a2 2 0 0 1-2 2h-5" stroke="var(--accent-neon)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 36H7a2 2 0 0 1-2-2v-5" stroke="var(--accent-neon)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+            <!-- Geometric S & R Craft Monogram -->
+            <!-- 'S' Path -->
+            <path d="M18.5 13.5h-5.5a2.2 2.2 0 0 0-2.2 2.2v0.8a2.2 2.2 0 0 0 2.2 2.2h3.5a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 1-2.2 2.2h-6" stroke="var(--accent-neon)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- 'R' Path -->
+            <path d="M22.5 26.3V13.5h5.2a3.2 3.2 0 0 1 3.2 3.2v0a3.2 3.2 0 0 1-3.2 3.2h-5.2m4.6 0.2l4 6.4" stroke="var(--text-pure)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Live Status Pulse Beacon -->
+            <circle cx="33.5" cy="6.5" r="2.2" fill="var(--accent-neon)" class="logo-pulse-circle"/>
+            <defs>
+              <linearGradient id="logoBgGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0c111d" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="#05070c" stop-opacity="0.98"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
         <div class="nav-brand-wordmark">
           <span class="nav-brand-name">Shivam Raut</span>
@@ -121,21 +140,30 @@
 
       <!-- Persona Switcher Pill -->
       <div class="persona-switcher" role="tablist" aria-label="Perspective Switcher">
-        <button class="persona-btn active" data-persona="gtm" id="btnPersonaGtm">
-          <i class="fa-solid fa-rocket"></i> GTM &amp; Growth
+        <button class="persona-btn active" data-persona="gtm" id="btnPersonaGtm" title="GTM & Growth Perspective">
+          <i class="fa-solid fa-rocket"></i> <span class="persona-label">GTM &amp; Growth</span>
         </button>
-        <button class="persona-btn" data-persona="design" id="btnPersonaDesign">
-          <i class="fa-solid fa-pen-nib"></i> Design &amp; UI/UX
+        <button class="persona-btn" data-persona="design" id="btnPersonaDesign" title="Design & UI/UX Perspective">
+          <i class="fa-solid fa-pen-nib"></i> <span class="persona-label">Design &amp; UI/UX</span>
         </button>
-        <button class="persona-btn" data-persona="ai" id="btnPersonaAi">
-          <i class="fa-solid fa-brain"></i> AI &amp; Systems
+        <button class="persona-btn" data-persona="ai" id="btnPersonaAi" title="AI & Systems Perspective">
+          <i class="fa-solid fa-brain"></i> <span class="persona-label">AI &amp; Systems</span>
         </button>
-        <button class="persona-btn" data-persona="analytics" id="btnPersonaAnalytics">
-          <i class="fa-solid fa-chart-pie"></i> Analytics
+        <button class="persona-btn" data-persona="analytics" id="btnPersonaAnalytics" title="Product Analytics Perspective">
+          <i class="fa-solid fa-chart-pie"></i> <span class="persona-label">Analytics</span>
         </button>
       </div>
 
       <nav class="nav-menu" id="navMenu">
+        <div class="mobile-persona-header">
+          <span class="mobile-menu-label">SWITCH PERSPECTIVE:</span>
+          <div class="mobile-persona-grid">
+            <button type="button" class="m-persona-btn active" data-persona="gtm"><i class="fa-solid fa-rocket"></i> GTM</button>
+            <button type="button" class="m-persona-btn" data-persona="design"><i class="fa-solid fa-pen-nib"></i> Design</button>
+            <button type="button" class="m-persona-btn" data-persona="ai"><i class="fa-solid fa-brain"></i> AI</button>
+            <button type="button" class="m-persona-btn" data-persona="analytics"><i class="fa-solid fa-chart-pie"></i> Data</button>
+          </div>
+        </div>
         <a href="#about" class="nav-item">Philosophy</a>
         <a href="#design-lab" class="nav-item">Design Lab</a>
         <a href="#projects" class="nav-item">Flagships</a>
@@ -201,27 +229,30 @@
             </a>
             <a href="#design-lab" class="btn btn-glass">
               <i class="fa-solid fa-sliders"></i>
-              <span>INTERACTIVE DESIGN LAB</span>
+              <span>DESIGN LAB</span>
             </a>
-            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="GitHub Profile">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="X / Twitter">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.behance.net/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="Behance Portfolio">
-              <i class="fa-brands fa-behance"></i>
-            </a>
-            <a href="https://substack.com/@shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="Substack Articles">
-              <i class="fa-solid fa-newspaper"></i>
-            </a>
+            <div class="hero-socials-row">
+              <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="X / Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.behance.net/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="Behance Portfolio">
+                <i class="fa-brands fa-behance"></i>
+              </a>
+              <a href="https://substack.com/@shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="Substack Articles">
+                <svg class="brand-svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+              </a>
+            </div>
           </div>
+
         </div>
 
         <!-- Right: Cyber Portrait HUD & Interactive ASCII Visualizer -->
@@ -790,11 +821,13 @@
 
           <div class="contact-methods">
             
-            <a href="mailto:shivamraut.work@gmail.com" class="contact-pill" id="emailPill">
-              <i class="fa-solid fa-envelope"></i>
-              <span>shivamraut.work@gmail.com</span>
-              <button class="copy-btn" id="btnCopyEmail" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
-            </a>
+            <div class="contact-pill contact-pill-email" id="emailPill">
+              <a href="mailto:shivamraut.work@gmail.com" class="email-link" title="Send email to Shivam">
+                <i class="fa-solid fa-envelope"></i>
+                <span>shivamraut.work@gmail.com</span>
+              </a>
+              <button type="button" class="copy-btn" id="btnCopyEmail" title="Copy Email to Clipboard" aria-label="Copy Email to Clipboard"><i class="fa-regular fa-copy"></i></button>
+            </div>
 
             <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
               <i class="fa-brands fa-linkedin"></i>
@@ -822,7 +855,7 @@
             </a>
 
             <a href="https://substack.com/@shivamraut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
-              <i class="fa-solid fa-newspaper"></i>
+              <svg class="brand-svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
               <span>substack.com/@shivamraut1610</span>
             </a>
 
@@ -846,7 +879,7 @@
           <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="https://www.instagram.com/shivamraut1610" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.behance.net/shivamraut1610" target="_blank" rel="noopener noreferrer" title="Behance Portfolio"><i class="fa-brands fa-behance"></i></a>
-          <a href="https://substack.com/@shivamraut1610" target="_blank" rel="noopener noreferrer" title="Substack Articles"><i class="fa-solid fa-newspaper"></i></a>
+          <a href="https://substack.com/@shivamraut1610" target="_blank" rel="noopener noreferrer" title="Substack Articles"><svg class="brand-svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
         </div>
         <span class="mono-tag">© 2026 SHIVAM RAUT · MIT LICENSED</span>
       </div>
@@ -861,6 +894,6 @@
   <!-- Toast Notification -->
   <div class="toast-notification" id="toast"></div>
 
-  <script src="app.js?v=2.6"></script>
+  <script src="app.js?v=2.8"></script>
 </body>
 </html>
