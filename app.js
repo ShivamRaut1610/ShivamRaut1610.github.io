@@ -1,50 +1,170 @@
 // ==========================================================================
-// SHIVAM RAUT PORTFOLIO - LOGIC & CASE STUDY DATA
+// SHIVAM RAUT PORTFOLIO - HIGH-CRAFT DESIGN & LOGIC ENGINE
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Menu Toggle
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navLinks = document.getElementById('nav-links');
 
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-      }
-    });
-
-    // Close mobile nav on link click
-    navLinks.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-xmark');
-        }
-      });
+  // 1. Dynamic Cursor Glow Tracker
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (cursorGlow) {
+    window.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
     });
   }
 
-  // 2. Project Filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  // 2. Toast Notification Utility
+  const toast = document.getElementById('toast');
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
+  };
 
-  filterBtns.forEach(btn => {
+  // 3. Persona Switcher Engine (GTM / Design / AI)
+  const personaBtns = document.querySelectorAll('.persona-btn');
+  const heroHeading = document.getElementById('heroHeading');
+  const heroDesc = document.getElementById('heroDesc');
+  const currentPersonaTag = document.getElementById('currentPersonaTag');
+  const asciiArtBlock = document.getElementById('asciiArtBlock');
+
+  const personaData = {
+    gtm: {
+      tag: 'MODE: GTM & GROWTH OBSESSED',
+      heading: 'Where <span class="highlight-gtm">GTM Velocity</span> meets <span class="highlight-design">Thoughtful Design</span> and <span class="highlight-ai">Deterministic AI</span>.',
+      desc: 'I am a <strong>GTM & Design Engineer</strong> with a deep obsession with product distribution, self-serve funnels, and high-craft UI/UX. I build software that converts at first glance, feels buttery smooth, and solves critical real-world friction.',
+      ascii: `  ____  _     _                     ____             _   
+ / ___|| |__ (_)_   ____ _ _ __ ___ |  _ \\ __ _ _   _| |_ 
+ \\___ \\| '_ \\| \\ \\ / / _\` | '_ \` _ \\| |_) / _\` | | | | __|
+  ___) | | | | |\\ V / (_| | | | | | |  _ < (_| | |_| | |_ 
+ |____/|_| |_|_| \\_/ \\__,_|_| |_| |_|_| \\_\\__,_|\\__,_|\\__|
+ ========================================================
+ [★] FOCUS    : GTM Engineering × High-Craft Product Design
+ [★] FUNNELS  : Self-Serve Onramps · Conversion · Viral Loops
+ [★] AI STACK : FastAPI · LangChain · Nemotron · Deterministic Core
+ [★] LOCATION : Pune, India // Open for Forward Deployed Roles`
+    },
+    design: {
+      tag: 'MODE: PRODUCT DESIGN & HIGH-CRAFT UI/UX',
+      heading: 'Crafting <span class="highlight-design">Buttery UI/UX</span>, Micro-Physics, and <span class="highlight-gtm">Zero-Friction Flows</span>.',
+      desc: 'I understand <strong>Product Design from user psychology to pixel-level CSS</strong>. I eliminate translation loss between Figma and production code, creating software with Linear/Vercel-level visual taste and micro-interactions.',
+      ascii: `  ____  _____ ____ ___ ____ _   _ 
+ |  _ \\| ____/ ___|_ _/ ___| \\ | |
+ | | | |  _| \\___ \\| | |  _|  \\| |
+ | |_| | |___ ___) | | |_| | |\\  |
+ |____/|_____|____/___\\____|_| \\_|
+ ========================================================
+ [★] CRAFT    : High-Craft UI/UX · Obsidian Glass · Spatial Layout
+ [★] TOKENS   : Dynamic CSS Variables · Micro-Physics · 60fps
+ [★] FIGMA    : Zero Translation Loss (Concept to React/CSS)
+ [★] TASTE    : Dieter Rams Philosophy × Modern Cyber Aesthetic`
+    },
+    ai: {
+      tag: 'MODE: DETERMINISTIC AI & MULTI-AGENT ARCHITECT',
+      heading: 'Building <span class="highlight-ai">Zero-Hallucination AI</span> and <span class="highlight-gtm">Multi-Agent Systems</span>.',
+      desc: 'Architecting critical software under the philosophy: <strong>"Deterministic Math, Probabilistic Narration"</strong>. In finance and operations, LLMs must never compute numbers—they narrate verified mathematical truth.',
+      ascii: `     _    ___   ______     ______ _____ _____ __  __ ____  
+    / \\  |_ _| / ___\\ \\   / / ___|_   _| ____|  \\/  / ___| 
+   / _ \\  | |  \\___ \\\\ \\ / /\\___ \\ | | |  _| | |\\/| \\___ \\ 
+  / ___ \\ | |   ___) |\\ V /  ___) || | | |___| |  | |___) |
+ /_/   \\_\\___| |____/  \\_/  |____/ |_| |_____|_|  |_|____/ 
+ ========================================================
+ [★] ARCH     : FastAPI · PostgreSQL · Docker · Redis
+ [★] AGENTS   : NVIDIA Nemotron-3 · LangChain · Confidence Gating
+ [★] ACCURACY : Deterministic Mathematical Isolation (0% Error)
+ [★] AWARD    : All India Rank #2 at PFRDA National Hackathon`
+    }
+  };
+
+  personaBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      personaBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filterValue = btn.getAttribute('data-filter');
+      const persona = btn.getAttribute('data-persona');
+      const data = personaData[persona];
+
+      if (data) {
+        if (heroHeading) heroHeading.innerHTML = data.heading;
+        if (heroDesc) heroDesc.innerHTML = data.desc;
+        if (currentPersonaTag) currentPersonaTag.textContent = data.tag;
+        if (asciiArtBlock) asciiArtBlock.textContent = data.ascii;
+        showToast(`Switched to ${persona.toUpperCase()} View`);
+      }
+    });
+  });
+
+  // 4. Interactive Design Lab Engine
+  // A. Swatches
+  const swatches = document.querySelectorAll('.swatch-btn');
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      swatches.forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+
+      const color = swatch.getAttribute('data-color');
+      document.documentElement.style.setProperty('--accent-neon', color);
+      document.documentElement.style.setProperty('--accent-glow', `${color}45`);
+      document.documentElement.style.setProperty('--border-glow', `${color}75`);
+
+      showToast(`Accent Token Updated: ${color}`);
+    });
+  });
+
+  // B. Glassmorphism Blur Slider
+  const blurSlider = document.getElementById('blurSlider');
+  const blurVal = document.getElementById('blurVal');
+  if (blurSlider && blurVal) {
+    blurSlider.addEventListener('input', (e) => {
+      const val = `${e.target.value}px`;
+      document.documentElement.style.setProperty('--glass-blur', val);
+      blurVal.textContent = val;
+    });
+  }
+
+  // C. Scanlines & Grid Toggles
+  const btnToggleScanlines = document.getElementById('btnToggleScanlines');
+  const scanlineOverlay = document.getElementById('scanlineOverlay');
+  if (btnToggleScanlines && scanlineOverlay) {
+    btnToggleScanlines.addEventListener('click', () => {
+      scanlineOverlay.classList.toggle('hidden');
+      const isActive = !scanlineOverlay.classList.contains('hidden');
+      btnToggleScanlines.classList.toggle('active', isActive);
+      btnToggleScanlines.textContent = `Scanlines: ${isActive ? 'ON' : 'OFF'}`;
+      showToast(`Scanlines ${isActive ? 'Enabled' : 'Disabled'}`);
+    });
+  }
+
+  const btnToggleGrid = document.getElementById('btnToggleGrid');
+  const cyberGrid = document.getElementById('cyberGrid');
+  if (btnToggleGrid && cyberGrid) {
+    btnToggleGrid.addEventListener('click', () => {
+      cyberGrid.classList.toggle('hidden');
+      const isActive = !cyberGrid.classList.contains('hidden');
+      btnToggleGrid.classList.toggle('active', isActive);
+      btnToggleGrid.textContent = `Matrix Grid: ${isActive ? 'ON' : 'OFF'}`;
+      showToast(`Matrix Grid ${isActive ? 'Enabled' : 'Disabled'}`);
+    });
+  }
+
+  // 5. Project Filtering
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const projectCards = document.querySelectorAll('.project-master-card');
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filter = pill.getAttribute('data-filter');
 
       projectCards.forEach(card => {
         const categories = card.getAttribute('data-category') || '';
-        if (filterValue === 'all' || categories.includes(filterValue)) {
-          card.style.display = 'flex';
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'block';
           card.style.animation = 'fadeIn 0.3s ease-in-out';
         } else {
           card.style.display = 'none';
@@ -53,202 +173,131 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Architecture Showcase Tabs
-  const archTabs = document.querySelectorAll('.arch-tab');
-  const archContents = document.querySelectorAll('.arch-tab-content');
+  // 6. Interactive Command Terminal
+  const terminalForm = document.getElementById('terminalForm');
+  const terminalInput = document.getElementById('terminalInput');
+  const terminalScreen = document.getElementById('terminalScreen');
 
-  archTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      archTabs.forEach(t => t.classList.remove('active'));
-      archContents.forEach(c => c.classList.remove('active'));
+  const termResponses = {
+    help: `Available commands:
+  • <span class="highlight">gtm</span>       : Why I'm obsessed with GTM engineering & distribution
+  • <span class="highlight">design</span>    : My Product Design & UI/UX principles
+  • <span class="highlight">projects</span>  : Direct links to my 5 flagship architectures
+  • <span class="highlight">whoami</span>    : Background, education & hackathon ranking
+  • <span class="highlight">contact</span>   : Signal transmission coordinates
+  • <span class="highlight">clear</span>     : Wipe terminal buffer`,
 
-      tab.classList.add('active');
-      const targetId = 'tab-' + tab.getAttribute('data-tab');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
-    });
-  });
+    gtm: `[GTM ENGINEERING PHILOSOPHY]
+-------------------------------------------------------
+Code without adoption is zero-yield. I build at the revenue
+boundary: self-serve activation loops, viral campus referrals,
+and product analytics that drop onboarding friction to zero.
+Proven in PensionQuest (AIR #2) where gamified funnels solved
+a national 92% youth abandonment problem.`,
 
-  // 4. Case Studies Detailed Data
-  const caseStudies = {
-    pensionquest: {
-      title: "PensionQuest — Gamified NPS Financial Platform",
-      badge: "All India 2nd Rank | PFRDA Hackathon 2026",
-      problem: "Young Indians find retirement planning and National Pension System (NPS) regulations overly complex, dense, and unengaging, leading to massive financial under-preparedness among Gen-Z and millennial professionals.",
-      solution: "Engineered a multilingual, gamified mobile and web experience that turns pension awareness into simulated life decisions. Integrates interactive compound growth calculators, risk-appetite profiling, and vernacular conversational AI.",
-      architecture: [
-        "FastAPI Backend: High-speed asynchronous Python API serving calculation engines, auth, and state.",
-        "React Native (Expo) & React Web: Cross-platform frontend for frictionless onboarding.",
-        "ML & Vernacular Engine: Multilingual speech and text guidance for tier-2/3 young earners.",
-        "Infra & Orchestration: Fully containerized using Docker and Docker Compose."
-      ],
-      impact: "Ranked #2 nationally by the Pension Fund Regulatory and Development Authority (PFRDA) jury among thousands of engineering teams across India."
-    },
-    nishchay: {
-      title: "Nishchay (Neev) — Hyper-Local Rural Micro-Enterprise Advisory",
-      badge: "Smart India Hackathon 2026 (SIH26091)",
-      problem: "Rural micro-entrepreneurs face severe lack of structured financial guidance and local market intelligence, making formal government credit schemes inaccessible.",
-      solution: "Built an AI-powered advisory platform for the Ministry of Social Justice and Empowerment built on a strict zero-hallucination paradigm.",
-      architecture: [
-        "Deterministic Computing Core: Pure Python rules engine computing all loan eligibility, subsidies, and financial metrics.",
-        "AST CI/CD Lint Boundary: Automated pull-request guard enforcing zero LLM imports inside the core calculation modules.",
-        "Voice-First Narration: Sarvam AI and Bhashini translating verified numerical reports into natural voice responses in local dialects.",
-        "Geospatial Context: OSM Overpass queries analyzing micro-market density and raw material proximity."
-      ],
-      impact: "100% elimination of financial hallucination risk with full mathematical explainability and regulatory audit trails."
-    },
-    itcwms: {
-      title: "ITCWMS — Intelligent IT Compliance & Workflow Monitoring",
-      badge: "Autonomous Multi-Agent Architecture",
-      problem: "Modern SDLC and operational workflows suffer from silent compliance breaches, SLA delays, and manual review bottlenecks between product specs and code delivery.",
-      solution: "Designed an autonomous multi-agent monitoring platform that watches incoming Git commits, requirement documents, and test logs, scoring compliance before code merges.",
-      architecture: [
-        "RequirementAgent: Parses PRDs and user stories for ambiguity, acceptance criteria, and security needs.",
-        "DevelopmentAgent: Inspects diffs, commit standards, and lint thresholds using NVIDIA Nemotron.",
-        "Confidence Gating: Decisions scoring >85% confidence auto-advance the pipeline; lower confidence routes alerts to engineering leads via n8n."
-      ],
-      impact: "Continuous automated SDLC compliance verification with verifiable audit trails and near-instant violation alerts."
-    },
-    disha: {
-      title: "Disha Pariwar Scholarship Portal",
-      badge: "Production Hardened (v43) | Live NGO Deployment",
-      problem: "The charitable trust relied on manual paper-based applications, resulting in lost student records, delayed scholarship disbursements, and severe coordination overhead across rural Maharashtra.",
-      solution: "Designed and deployed a resilient, zero-cost production portal optimized for non-technical NGO coordinators and Marathi-speaking applicants.",
-      architecture: [
-        "Frontend: High-speed responsive form hosted on Netlify.",
-        "Serverless Engine: Google Apps Script with automated session authentication and rate-limited OTP flows.",
-        "Document & Database Layer: Google Sheets and Google Drive acting as relational data and file vault.",
-        "Engineering Hardening: Overcame PropertiesService storage limits and solved complex PDF generation edge cases across 43 release iterations."
-      ],
-      impact: "Successfully processes scholarship applications across Maharashtra with comprehensive Marathi documentation and 100+ integrated schemes."
-    },
-    arthvo: {
-      title: "Arthvo — Intelligent Wealth & Advisory Infrastructure",
-      badge: "Fintech Application",
-      problem: "Fragmented financial tracking tools fail to provide actionable, context-aware financial advice for modern digital earners.",
-      solution: "Constructed an end-to-end fintech platform focused on automated portfolio health checks, systematic investment plans (SIP), and interactive risk profiling.",
-      architecture: [
-        "Frontend: Modern responsive React UI with interactive data charts.",
-        "Backend: Modular RESTful services with relational PostgreSQL storage.",
-        "Advisory Flow: Transparent asset distribution recommendation logic."
-      ],
-      impact: "End-to-end working prototype demonstrating full-stack fintech architecture and clean modular code separation."
-    },
-    campuskart: {
-      title: "CampusKart — Peer-to-Peer Student Marketplace",
-      badge: "Student Commerce Platform",
-      problem: "College students lack a localized, secure marketplace to buy, sell, or exchange textbooks, stationery, and lab equipment at affordable prices.",
-      solution: "Built a dedicated multi-page campus marketplace featuring catalog browsing, category filters, product comparison, dynamic cart, and secure checkout simulation.",
-      architecture: [
-        "Multi-page Architecture: 15+ dedicated HTML5/CSS3/ES6+ pages.",
-        "Client-Side State: Fast search and responsive filter state without external library bloat.",
-        "Responsive UX: Optimized for mobile viewing during campus hours."
-      ],
-      impact: "Clean, frictionless student marketplace UX connecting peers within university boundaries."
-    }
+    design: `[PRODUCT DESIGN & UI/UX MANIFESTO]
+-------------------------------------------------------
+Taste is the ultimate moat. 
+1. Frictionless Onboarding: Explain value in < 3 seconds.
+2. Tactile Ergonomics: 60fps micro-animations, obsidian glass.
+3. Zero Translation Loss: I design in Figma and code directly
+   into clean, performant CSS/React.`,
+
+    projects: `[FLAGSHIP ARCHITECTURES]
+-------------------------------------------------------
+1. PensionQuest : AIR #2 PFRDA Winner · github.com/ShivamRaut1610/PensionQuest
+2. Arthvo       : Gamified Wealth · github.com/ShivamRaut1610/Arthvo
+3. CampusKart   : Live on Pages · shivamraut1610.github.io/CampusKart/
+4. TokenSense   : Open Source DX · github.com/ShivamRaut1610/tokensense
+5. Portfolio    : Live Showcase · shivamraut1610.github.io`,
+
+    whoami: `[DOSSIER: SHIVAM RAUT]
+-------------------------------------------------------
+• Roles      : GTM & Design Engineer | AI Systems Builder
+• Education  : Computer Engineering @ MIT AOE Pune
+• Hackathons : All India Rank #2 @ PFRDA National Hackathon
+• Certs      : Oracle Certified Associate SQL | IIT Ropar AI Minor
+• OpenSource : SSoC Season 5 Contributor (LocalMind)`,
+
+    contact: `[TRANSMISSION CHANNELS]
+-------------------------------------------------------
+• Email    : shivamraut.work@gmail.com
+• LinkedIn : linkedin.com/in/shivamraut1610
+• GitHub   : github.com/ShivamRaut1610
+• X/Twitter: @ShivamRaut1610`
   };
 
-  // 5. Case Study Modal Handlers
-  const modal = document.getElementById('case-study-modal');
-  const modalClose = document.getElementById('modal-close');
-  const modalContent = document.getElementById('modal-content');
-  const caseStudyTriggers = document.querySelectorAll('.open-case-study');
+  if (terminalForm && terminalInput && terminalScreen) {
+    terminalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputVal = terminalInput.value.trim().toLowerCase();
+      if (!inputVal) return;
 
-  function openModal(projectId) {
-    const data = caseStudies[projectId];
-    if (!data) return;
+      // Append user command
+      const cmdLine = document.createElement('div');
+      cmdLine.className = 'term-line cmd';
+      cmdLine.innerHTML = `<span class="term-prompt">shivam@fde:~$</span> ${escapeHtml(inputVal)}`;
+      terminalScreen.appendChild(cmdLine);
 
-    let archHtml = '';
-    if (data.architecture && data.architecture.length > 0) {
-      archHtml = `
-        <h4 style="margin: 16px 0 8px 0; color: var(--accent-cyan);">Key Architecture & Engineering:</h4>
-        <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.7;">
-          ${data.architecture.map(item => `<li>${item}</li>`).join('')}
-        </ul>
-      `;
-    }
+      if (inputVal === 'clear') {
+        terminalScreen.innerHTML = '';
+      } else {
+        const resLine = document.createElement('div');
+        resLine.className = 'term-line res';
+        if (termResponses[inputVal]) {
+          resLine.innerHTML = `<pre style="font-family: inherit; white-space: pre-wrap;">${termResponses[inputVal]}</pre>`;
+        } else {
+          resLine.innerHTML = `command not recognized: <strong>${escapeHtml(inputVal)}</strong>. Type <span class="highlight">help</span> for available commands.`;
+        }
+        terminalScreen.appendChild(resLine);
+      }
 
-    modalContent.innerHTML = `
-      <div style="margin-bottom: 16px;">
-        <span class="project-badge award-badge">${data.badge}</span>
-      </div>
-      <h2 style="font-size: 1.8rem; margin-bottom: 12px; color: #fff;">${data.title}</h2>
-      
-      <div style="margin-bottom: 18px;">
-        <h4 style="color: var(--accent-cyan); margin-bottom: 4px;">Problem Context:</h4>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">${data.problem}</p>
-      </div>
-
-      <div style="margin-bottom: 18px;">
-        <h4 style="color: var(--accent-cyan); margin-bottom: 4px;">Solution:</h4>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">${data.solution}</p>
-      </div>
-
-      ${archHtml}
-
-      <div style="margin-top: 20px; padding: 14px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px;">
-        <strong style="color: var(--accent-emerald);"><i class="fa-solid fa-trophy"></i> Measurable Impact:</strong>
-        <p style="color: #e2e8f0; margin-top: 4px; font-size: 0.92rem;">${data.impact}</p>
-      </div>
-    `;
-
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  caseStudyTriggers.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const projectId = btn.getAttribute('data-project');
-      openModal(projectId);
-    });
-  });
-
-  if (modalClose) {
-    modalClose.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
+      terminalInput.value = '';
+      terminalScreen.scrollTop = terminalScreen.scrollHeight;
     });
   }
 
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+  // 7. Clipboard Buttons
+  const btnCopyAscii = document.getElementById('btnCopyAscii');
+  if (btnCopyAscii && asciiArtBlock) {
+    btnCopyAscii.addEventListener('click', () => {
+      navigator.clipboard.writeText(asciiArtBlock.textContent);
+      showToast('ASCII Dossier Copied to Clipboard!');
+    });
+  }
+
+  const btnCopyEmail = document.getElementById('btnCopyEmail');
+  if (btnCopyEmail) {
+    btnCopyEmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      navigator.clipboard.writeText('shivamraut.work@gmail.com');
+      showToast('Email Copied: shivamraut.work@gmail.com');
+    });
+  }
+
+  // 8. Mobile Navigation Toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const isVisible = navMenu.style.display === 'flex';
+      navMenu.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) {
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '100%';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.background = 'rgba(6, 8, 13, 0.98)';
+        navMenu.style.padding = '20px';
+        navMenu.style.borderBottom = '1px solid var(--border-glow)';
       }
     });
   }
 
-  // 6. Copy Email Button
-  const copyBtn = document.getElementById('copy-email-btn');
-  const emailText = document.getElementById('email-text');
-  const copyIcon = document.getElementById('copy-icon');
-
-  if (copyBtn && emailText) {
-    copyBtn.addEventListener('click', () => {
-      const email = emailText.textContent.trim();
-      navigator.clipboard.writeText(email).then(() => {
-        copyIcon.className = 'fa-solid fa-check';
-        copyIcon.style.color = 'var(--accent-emerald)';
-        setTimeout(() => {
-          copyIcon.className = 'fa-solid fa-copy';
-          copyIcon.style.color = '';
-        }, 2000);
-      });
-    });
+  function escapeHtml(text) {
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  // 7. Navbar Scroll Blur Elevation
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.15)';
-      navbar.style.background = 'rgba(7, 9, 14, 0.95)';
-    } else {
-      navbar.style.borderBottomColor = 'var(--border-subtle)';
-      navbar.style.background = 'rgba(7, 9, 14, 0.8)';
-    }
-  });
 });

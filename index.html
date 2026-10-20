@@ -3,39 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shivam Raut | AI Systems & Full-Stack Engineer</title>
-  <meta name="description" content="Portfolio of Shivam Raut - AI Systems Engineer, Full-Stack Developer, All India 2nd Rank PFRDA Hackathon, builder of multi-agent workflows and deterministic AI architectures.">
+  <title>Shivam Raut — GTM & Design Engineer | AI Systems & UI/UX</title>
+  <meta name="description" content="Portfolio of Shivam Raut — GTM Engineer, Product Designer, UI/UX Craftsman, and AI Systems Builder. All India Rank #2 PFRDA National Hackathon Winner.">
+  <meta name="keywords" content="Shivam Raut, GTM Engineer, Design Engineer, UI/UX Designer, Forward Deployed Engineer, AI Systems, Product Analytics, PensionQuest">
+  <meta property="og:title" content="Shivam Raut — GTM & Design Engineer">
+  <meta property="og:description" content="Building at the boundary of thoughtful design, deterministic AI, and programmatic GTM distribution.">
+  <meta property="og:type" content="website">
+
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-  <!-- Ambient background glow elements -->
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-  <div class="glow-orb orb-3"></div>
+<body class="theme-obsidian">
+  <!-- Interactive Background Canvas & Grid Overlay -->
+  <div class="cyber-grid" id="cyberGrid"></div>
+  <div class="scanline-overlay" id="scanlineOverlay"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Top System Telemetry Bar -->
+  <aside class="system-telemetry-bar">
+    <div class="container telemetry-inner">
+      <div class="telemetry-left">
+        <span class="status-indicator live"></span>
+        <span class="mono-tag">SYS::STATUS: 60 FPS // ONLINE</span>
+        <span class="telemetry-divider">|</span>
+        <span class="mono-tag" id="currentPersonaTag">MODE: GTM & DESIGN TECHNOLOGIST</span>
+      </div>
+      <div class="telemetry-right">
+        <span class="mono-tag">LOCATION: PUNE, INDIA (IST)</span>
+        <span class="telemetry-divider">|</span>
+        <a href="#contact" class="telemetry-action"><i class="fa-solid fa-satellite-dish"></i> SIGNAL OPEN</a>
+      </div>
+    </div>
+  </aside>
 
   <!-- Navigation -->
   <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-code">&lt;SR /&gt;</span>
-        <span class="logo-name">Shivam Raut</span>
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">[</span>
+        <span class="brand-code">SR</span>
+        <span class="brand-bracket">]</span>
+        <span class="brand-title">Shivam Raut</span>
       </a>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#architecture" class="nav-link">Architecture</a>
-        <a href="#credentials" class="nav-link">Credentials</a>
-        <a href="#resume" class="nav-link">Resume</a>
-        <a href="#contact" class="nav-link nav-cta">Get in Touch</a>
+      <!-- Persona Switcher Pill -->
+      <div class="persona-switcher" role="tablist" aria-label="Perspective Switcher">
+        <button class="persona-btn active" data-persona="gtm" id="btnPersonaGtm">
+          <i class="fa-solid fa-rocket"></i> GTM & Growth
+        </button>
+        <button class="persona-btn" data-persona="design" id="btnPersonaDesign">
+          <i class="fa-solid fa-pen-nib"></i> Design & UI/UX
+        </button>
+        <button class="persona-btn" data-persona="ai" id="btnPersonaAi">
+          <i class="fa-solid fa-brain"></i> AI & Systems
+        </button>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-item">Philosophy</a>
+        <a href="#design-lab" class="nav-item">Design Lab</a>
+        <a href="#projects" class="nav-item">Flagships</a>
+        <a href="#terminal" class="nav-item">Terminal</a>
+        <a href="#contact" class="nav-item nav-item-cta">Let's Connect</a>
       </nav>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-        <i class="fa-solid fa-bars"></i>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars-staggered"></i>
       </button>
     </div>
   </header>
@@ -43,795 +81,526 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="pulse-dot"></span>
-            <span>Available for High-Impact Software & AI Roles</span>
+      <div class="container hero-layout">
+        
+        <!-- Left: Hero Headline & Narrative -->
+        <div class="hero-text-col">
+          <div class="badge-row">
+            <span class="pixel-badge"><i class="fa-solid fa-trophy"></i> AIR #2 PFRDA HACKATHON</span>
+            <span class="pixel-badge secondary"><i class="fa-solid fa-gem"></i> HIGH-CRAFT UI/UX</span>
           </div>
-          <h1 class="hero-title">
-            Architecting <span class="gradient-text">Autonomous AI Agents</span> & Resilient Production Systems.
+
+          <h1 class="hero-heading" id="heroHeading">
+            Where <span class="highlight-gtm">GTM Velocity</span> meets <span class="highlight-design">Thoughtful Design</span> and <span class="highlight-ai">Deterministic AI</span>.
           </h1>
-          <p class="hero-subtitle">
-            Computer Engineering student at MIT AOE Pune, All India 2nd Rank at PFRDA Hackathon, and builder of multi-agent compliance systems, deterministic AI pipelines, and battle-tested production platforms.
+
+          <p class="hero-desc" id="heroDesc">
+            I am a <strong>GTM & Design Engineer</strong> with a deep obsession with product distribution, high-craft UI/UX, and zero-hallucination AI systems. I build software that converts at first glance, feels buttery smooth, and solves critical real-world friction.
           </p>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-layer-group"></i> Explore Flagship Work
-            </a>
-            <a href="#resume" class="btn btn-secondary">
-              <i class="fa-solid fa-file-lines"></i> View Resume
-            </a>
-            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener" class="btn btn-ghost">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
+          <!-- Core Metrics Strip -->
+          <div class="hero-stats-strip">
+            <div class="stat-pill">
+              <span class="stat-num">AIR #2</span>
+              <span class="stat-label">National Rank (PFRDA)</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">17+</span>
+              <span class="stat-label">Production Screens Crafted</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">0%</span>
+              <span class="stat-label">AI Math Hallucination</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Obsessed with GTM</span>
+            </div>
           </div>
 
-          <!-- Highlight Metric Badges -->
-          <div class="hero-stats">
-            <div class="stat-card">
-              <div class="stat-num gradient-text">AIR #2</div>
-              <div class="stat-label">PFRDA National Hackathon</div>
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-cyber">
+              <span>EXPLORE FLAGSHIPS</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#design-lab" class="btn btn-glass">
+              <i class="fa-solid fa-sliders"></i>
+              <span>INTERACTIVE DESIGN LAB</span>
+            </a>
+            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Cyber Terminal & ASCII Visualizer -->
+        <div class="hero-terminal-col">
+          <div class="cyber-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title">shivam@design-technologist:~ (zsh)</div>
+              <div class="window-actions">
+                <button class="win-btn" id="btnCopyAscii" title="Copy Card"><i class="fa-regular fa-copy"></i></button>
+              </div>
             </div>
-            <div class="stat-card">
-              <div class="stat-num">50+</div>
-              <div class="stat-label">AI & Agentic Systems</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">v43</div>
-              <div class="stat-label">Production Hardened Deployments</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">30+</div>
-              <div class="stat-label">Hackathons Led & Executed</div>
+
+            <div class="window-body">
+              <pre class="ascii-art-hero" id="asciiArtBlock">
+  ____  _     _                     ____             _   
+ / ___|| |__ (_)_   ____ _ _ __ ___ |  _ \ __ _ _   _| |_ 
+ \___ \| '_ \| \ \ / / _` | '_ ` _ \| |_) / _` | | | | __|
+  ___) | | | | |\ V / (_| | | | | | |  _ < (_| | |_| | |_ 
+ |____/|_| |_|_| \_/ \__,_|_| |_| |_|_| \_\__,_|\__,_|\__|
+ ========================================================
+ [★] FOCUS    : GTM Engineering × High-Craft Product Design
+ [★] AI STACK : FastAPI · LangChain · Nemotron · Deterministic Core
+ [★] DESIGN   : Figma-to-Code · Obsidian Glass · Micro-Physics
+ [★] LOCATION : Pune, India // Open for Forward Deployed Roles
+              </pre>
+
+              <div class="terminal-quick-links">
+                <span class="cmd-prompt">$</span>
+                <span class="cmd-text">curl -s https://shivam.fyi/status</span>
+              </div>
+              <div class="terminal-output">
+                <div class="output-line"><span class="badge-mini success">LIVE</span> <strong>PensionQuest:</strong> AIR #2 Winner deployed on GitHub</div>
+                <div class="output-line"><span class="badge-mini accent">LIVE</span> <strong>CampusKart:</strong> 17-page P2P Marketplace live on Pages</div>
+                <div class="output-line"><span class="badge-mini warning">BUILD</span> <strong>Arthvo:</strong> Gamified Wealth Universe (Next 16 + Supabase)</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="hero-terminal">
-          <div class="terminal-card">
-            <div class="terminal-header">
-              <div class="window-controls">
-                <span class="control close"></span>
-                <span class="control minimize"></span>
-                <span class="control expand"></span>
-              </div>
-              <div class="terminal-title">shivam@systems-core:~$ ./display_dossier.sh</div>
-            </div>
-            <div class="terminal-body font-mono">
-              <p class="code-line"><span class="cmd-prompt">&gt;</span> <span class="cmd-cyan">const</span> engineer = {</p>
-              <p class="code-line indent-1">name: <span class="cmd-green">"Shivam Raut"</span>,</p>
-              <p class="code-line indent-1">location: <span class="cmd-green">"Pune, Maharashtra, India"</span>,</p>
-              <p class="code-line indent-1">institute: <span class="cmd-green">"MIT Academy of Engineering"</span>,</p>
-              <p class="code-line indent-1">core_focus: [</p>
-              <p class="code-line indent-2"><span class="cmd-green">"Multi-Agent AI Orchestration"</span>,</p>
-              <p class="code-line indent-2"><span class="cmd-green">"Deterministic Core / LLM Isolation"</span>,</p>
-              <p class="code-line indent-2"><span class="cmd-green">"Scalable Full-Stack Engineering"</span></p>
-              <p class="code-line indent-1">],</p>
-              <p class="code-line indent-1">flagship_builds: [<span class="cmd-yellow">"PensionQuest"</span>, <span class="cmd-yellow">"Nishchay"</span>, <span class="cmd-yellow">"ITCWMS"</span>, <span class="cmd-yellow">"DishaPortal"</span>],</p>
-              <p class="code-line indent-1">philosophy: <span class="cmd-green">"Deterministic math, probabilistic narration."</span></p>
-              <p class="code-line">};</p>
-              <div class="terminal-status-bar">
-                <span class="status-indicator"><i class="fa-solid fa-circle-check"></i> Systems Operational</span>
-                <span class="status-badge">Git: main</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- About & Narrative Section -->
-    <section class="section about-section" id="about">
+    <!-- Interactive Design & Aesthetic Lab -->
+    <section class="section design-lab-section" id="design-lab">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">ENGINEERING PROFILE</span>
-          <h2 class="section-title">The Intersection of Rigor and Intelligence</h2>
-          <p class="section-desc">
-            Building software that balances the speed of generative AI with the deterministic safety needed in production finance, healthcare, and enterprise compliance.
-          </p>
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-palette"></i> LIVING DESIGN SYSTEM</span>
         </div>
+        <h2 class="section-heading text-center">Interactive Design Lab & Tokens</h2>
+        <p class="section-subheading text-center">
+          Great design isn't static mockups—it is an interactive system of tokens, ergonomics, and micro-physics. Test my design tokens live on this entire website right now:
+        </p>
 
-        <div class="about-grid">
-          <div class="glass-card about-card">
-            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-            <h3>Multi-Agent AI & Workflows</h3>
-            <p>
-              Designing specialized agents that collaborate on complex tasks (e.g., automated SDLC compliance verification, vector-based conflict detection, and conversational RAG pipelines).
-            </p>
+        <div class="design-lab-grid">
+          
+          <!-- Control 1: Theme Accent Palette -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="mono-num">01 / PALETTE</span>
+              <h3>Accent Neon Channel</h3>
+            </div>
+            <p>Switch the active energetic frequency across all glowing vectors and typography:</p>
+            <div class="palette-swatches">
+              <button class="swatch-btn active" data-color="#00ffcc" style="--c: #00ffcc;" title="Cyber Cyan"></button>
+              <button class="swatch-btn" data-color="#a855f7" style="--c: #a855f7;" title="Electric Purple"></button>
+              <button class="swatch-btn" data-color="#10b981" style="--c: #10b981;" title="Phosphor Emerald"></button>
+              <button class="swatch-btn" data-color="#f59e0b" style="--c: #f59e0b;" title="Solar Amber"></button>
+              <button class="swatch-btn" data-color="#ff0055" style="--c: #ff0055;" title="Hyper Crimson"></button>
+            </div>
           </div>
 
-          <div class="glass-card about-card">
-            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Deterministic-First Architecture</h3>
-            <p>
-              Pioneering strict separation between deterministic computing cores (zero hallucinations) and AI-driven narration layers for critical financial and governance domains.
-            </p>
+          <!-- Control 2: Glassmorphism Blur -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="mono-num">02 / DEPTH</span>
+              <h3>Glassmorphic Blur Intensity</h3>
+            </div>
+            <p>Control the backdrop-filter diffusion of cards and navigation:</p>
+            <div class="slider-control">
+              <input type="range" id="blurSlider" min="4" max="32" value="16" step="2">
+              <span class="slider-val" id="blurVal">16px</span>
+            </div>
           </div>
 
-          <div class="glass-card about-card">
-            <div class="card-icon"><i class="fa-solid fa-server"></i></div>
-            <h3>Production-Grade Reliability</h3>
-            <p>
-              Experienced in end-to-end full-stack development, PostgreSQL data modeling, Redis caching, CI/CD lint enforcement, and hardening low-cost NGO infrastructure through 40+ iterations.
-            </p>
+          <!-- Control 3: CRT Scanlines -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="mono-num">03 / RETRO CRAFT</span>
+              <h3>CRT Scanlines & Grid</h3>
+            </div>
+            <p>Toggle tactile retro-futuristic CRT scanlines and coordinate matrix grid:</p>
+            <div class="toggle-group">
+              <button class="toggle-pill active" id="btnToggleScanlines">Scanlines: ON</button>
+              <button class="toggle-pill active" id="btnToggleGrid">Matrix Grid: ON</button>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Philosophy & The 4 Pillars -->
+    <section class="section philosophy-section" id="about">
+      <div class="container">
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-compass-drafting"></i> CORE PHILOSOPHY</span>
+        </div>
+        <h2 class="section-heading text-center">Architectural Taste & Manifesto</h2>
+        <p class="section-subheading text-center">
+          Software that scales must balance human emotion, mathematical certainty, and distribution velocity.
+        </p>
+
+        <div class="pillars-grid">
+          
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="pillar-index">PILLAR I</span>
+            <h3>GTM Obsession</h3>
+            <p>Code that nobody adopts is dead code. I build self-serve onramps, virality loops, and telemetry that convert users within the first 60 seconds.</p>
+            <div class="pillar-tag">Adoption Velocity</div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <span class="pillar-index">PILLAR II</span>
+            <h3>High-Craft Product UI/UX</h3>
+            <p>Design is not decoration; it is cognitive clarity. Micro-animations, responsive typography, and tactile feedback make complex systems feel intuitive.</p>
+            <div class="pillar-tag">Figma &rarr; Clean CSS/JS</div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span class="pillar-index">PILLAR III</span>
+            <h3>Deterministic Math & AI</h3>
+            <p>In healthcare and finance, LLMs must never compute numbers. We isolate core math in deterministic algorithms and use AI purely for vernacular storytelling.</p>
+            <div class="pillar-tag">Zero Hallucinations</div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-users-rays"></i></div>
+            <span class="pillar-index">PILLAR IV</span>
+            <h3>Community & Developer Advocacy</h3>
+            <p>Building in public through open source (SSoC Season 5, TokenSense), hackathon leadership, and developer tooling that empowers other builders.</p>
+            <div class="pillar-tag">Open Source & DevRel</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship Systems Showcase -->
     <section class="section projects-section" id="projects">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">FLAGSHIP WORK</span>
-          <h2 class="section-title">Featured Projects & Case Studies</h2>
-          <p class="section-desc">
-            Battle-tested systems built for national hackathons, production NGOs, and enterprise compliance workflows.
-          </p>
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-folder-tree"></i> PROVEN ARCHITECTURES</span>
         </div>
+        <h2 class="section-heading text-center">Flagship Projects & Case Studies</h2>
+        <p class="section-subheading text-center">
+          Each system designed from 0-to-1: combining user psychology, visual excellence, and hardened backend engineering.
+        </p>
 
-        <!-- Filter Controls -->
+        <!-- Project Filter Buttons -->
         <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="ai-agents">AI & Multi-Agent</button>
-          <button class="filter-btn" data-filter="fullstack">Full-Stack & Systems</button>
-          <button class="filter-btn" data-filter="hackathons">Hackathon Winners</button>
+          <button class="filter-pill active" data-filter="all">All Flagships</button>
+          <button class="filter-pill" data-filter="fintech">FinTech & GTM</button>
+          <button class="filter-pill" data-filter="ai">AI & Multi-Agent</button>
+          <button class="filter-pill" data-filter="design">UI/UX & Marketplace</button>
+          <button class="filter-pill" data-filter="devtools">DevTools & DevRel</button>
         </div>
 
-        <!-- Projects Grid -->
-        <div class="projects-grid" id="projects-grid">
+        <div class="projects-master-grid">
 
-          <!-- Project 1: PensionQuest -->
-          <div class="project-card glass-card" data-category="hackathons ai-agents fullstack">
-            <div class="project-header">
-              <div class="project-badge award-badge">
-                <i class="fa-solid fa-trophy"></i> AIR #2 PFRDA Hackathon
-              </div>
-              <span class="project-year">2026</span>
+          <!-- 1. PensionQuest -->
+          <article class="project-master-card" data-category="fintech ai">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award"><i class="fa-solid fa-trophy"></i> ALL INDIA RANK #2 WINNER</span>
+              <span class="mono-meta">PFRDA NATIONAL HACKATHON 2026</span>
             </div>
-            <h3 class="project-title">PensionQuest</h3>
-            <p class="project-tagline">Gamified National Pension Scheme (NPS) Awareness & Engagement Platform</p>
-            <p class="project-summary">
-              Full-stack gamification platform engineered to demystify retirement planning for Young India. Features interactive financial simulations, localized multilingual conversational AI, and personalized risk profiles.
-            </p>
-            <div class="project-tech-tags">
-              <span>FastAPI</span>
-              <span>Python 3.11</span>
-              <span>React Native (Expo)</span>
-              <span>React.js</span>
-              <span>PostgreSQL</span>
-              <span>Docker</span>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-val">2nd / 1000s</span>
-                <span class="metric-lbl">National Rank</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-val">Multi-Lingual</span>
-                <span class="metric-lbl">Vernacular AI</span>
-              </div>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-sm btn-outline open-case-study" data-project="pensionquest">
-                <i class="fa-solid fa-file-contract"></i> Read Case Study
-              </button>
-              <a href="https://github.com/ShivamRaut1610/PensionQuest" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 2: Nishchay (SIH 2026) -->
-          <div class="project-card glass-card" data-category="hackathons ai-agents">
-            <div class="project-header">
-              <div class="project-badge govt-badge">
-                <i class="fa-solid fa-landmark"></i> SIH 2026 (SIH26091)
-              </div>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">Nishchay (Neev)</h3>
-            <p class="project-tagline">Hyper-Local Micro-Enterprise Advisory & Financial Structuring Engine</p>
-            <p class="project-summary">
-              Built for the Ministry of Social Justice and Empowerment. Pioneers strict isolation between an un-hallucinatable deterministic calculations core and a Sarvam/Bhashini voice-first multilingual narration layer.
-            </p>
-            <div class="project-tech-tags">
-              <span>FastAPI</span>
-              <span>Sarvam AI</span>
-              <span>Bhashini</span>
-              <span>OSM Overpass</span>
-              <span>PostgreSQL</span>
-              <span>CI Lint Guards</span>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-val">0% Hallucination</span>
-                <span class="metric-lbl">In Financial Math</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-val">100% CI Enforced</span>
-                <span class="metric-lbl">Architecture Isolation</span>
-              </div>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-sm btn-outline open-case-study" data-project="nishchay">
-                <i class="fa-solid fa-file-contract"></i> Read Case Study
-              </button>
-              <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 3: ITCWMS -->
-          <div class="project-card glass-card" data-category="ai-agents fullstack">
-            <div class="project-header">
-              <div class="project-badge ai-badge">
-                <i class="fa-solid fa-robot"></i> Multi-Agent Orchestrator
-              </div>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">ITCWMS</h3>
-            <p class="project-tagline">Intelligent IT Compliance & Autonomous SDLC Workflow Monitoring</p>
-            <p class="project-summary">
-              Continuous multi-agent monitoring platform that watches SDLC phases in real time. Deploys specialized agents (`RequirementAgent`, `DesignAgent`, `DevelopmentAgent`, `TestingAgent`) with confidence-weighted decision scoring.
-            </p>
-            <div class="project-tech-tags">
-              <span>FastAPI</span>
-              <span>NVIDIA Nemotron-3</span>
-              <span>React Vite</span>
-              <span>n8n Workflows</span>
-              <span>Edge AI</span>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-val">4 Autonomous</span>
-                <span class="metric-lbl">Audit Agents</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-val">Real-time</span>
-                <span class="metric-lbl">SLA Alerting</span>
-              </div>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-sm btn-outline open-case-study" data-project="itcwms">
-                <i class="fa-solid fa-file-contract"></i> Read Case Study
-              </button>
-              <a href="https://github.com/ShivamRaut1610/ITCWMS" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 4: Disha Pariwar Portal -->
-          <div class="project-card glass-card" data-category="fullstack">
-            <div class="project-header">
-              <div class="project-badge prod-badge">
-                <i class="fa-solid fa-cloud-arrow-up"></i> Live in Production (v43)
-              </div>
-              <span class="project-year">Live</span>
-            </div>
-            <h3 class="project-title">Disha Pariwar Scholarship Portal</h3>
-            <p class="project-tagline">Automated End-to-End NGO Scholarship Management System</p>
-            <p class="project-summary">
-              Production portal for rural and underprivileged students across Maharashtra. Includes OTP authentication, automatic PDF generation, document verification queues, and zero-cost high-availability serverless architecture.
-            </p>
-            <div class="project-tech-tags">
-              <span>Google Apps Script</span>
-              <span>Netlify</span>
-              <span>Google Drive API</span>
-              <span>PDF Engine</span>
-              <span>Marathi UX</span>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-val">v43</span>
-                <span class="metric-lbl">Production Hardened</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-val">100+ Schemes</span>
-                <span class="metric-lbl">Integrated DB</span>
-              </div>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-sm btn-outline open-case-study" data-project="disha">
-                <i class="fa-solid fa-file-contract"></i> Read Case Study
-              </button>
-              <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Portal
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 5: Arthvo -->
-          <div class="project-card glass-card" data-category="fullstack ai-agents">
-            <div class="project-header">
-              <div class="project-badge brand-badge">
-                <i class="fa-solid fa-chart-line"></i> Fintech Ecosystem
-              </div>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">Arthvo</h3>
-            <p class="project-tagline">Intelligent Wealth & Personal Financial Advisory Infrastructure</p>
-            <p class="project-summary">
-              Next-generation financial advisory application built with modular portfolio analytics, AI-assisted asset allocation, and vernacular financial literacy modules.
-            </p>
-            <div class="project-tech-tags">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>PostgreSQL</span>
-              <span>Financial Analytics</span>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-val">End-to-End</span>
-                <span class="metric-lbl">Architecture</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-val">Micro-Invest</span>
-                <span class="metric-lbl">Advisory Flow</span>
-              </div>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-sm btn-outline open-case-study" data-project="arthvo">
-                <i class="fa-solid fa-file-contract"></i> Read Details
-              </button>
-              <a href="https://github.com/ShivamRaut1610/Arthvo" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 6: CampusKart -->
-          <div class="project-card glass-card" data-category="fullstack">
-            <div class="project-header">
-              <div class="project-badge default-badge">
-                <i class="fa-solid fa-store"></i> Student Marketplace
-              </div>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-title">CampusKart</h3>
-            <p class="project-tagline">Multi-Page Campus Marketplace & Peer-to-Peer Student Commerce</p>
-            <p class="project-summary">
-              Comprehensive web platform designed for intra-campus textbook exchange, student stationery reselling, product comparisons, and order tracking.
-            </p>
-            <div class="project-tech-tags">
-              <span>JavaScript ES6+</span>
-              <span>Semantic HTML5</span>
-              <span>Responsive CSS</span>
-              <span>Cart & Checkout</span>
-            </div>
-            <div class="project-metrics">
-              <div class="metric-item">
-                <span class="metric-val">15+ Pages</span>
-                <span class="metric-lbl">Complete Flow</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-val">Instant Search</span>
-                <span class="metric-lbl">Client Filter</span>
-              </div>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-sm btn-outline open-case-study" data-project="campuskart">
-                <i class="fa-solid fa-file-contract"></i> Read Details
-              </button>
-              <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Architectural Deep Dive Section -->
-    <section class="section architecture-section" id="architecture">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">ENGINEERING PRINCIPLES</span>
-          <h2 class="section-title">Architectural Patterns in Practice</h2>
-          <p class="section-desc">
-            How we solve the hallucination and governance challenges of production Generative AI.
-          </p>
-        </div>
-
-        <div class="arch-showcase glass-card">
-          <div class="arch-tabs">
-            <button class="arch-tab active" data-tab="deterministic">Pattern 1: Deterministic Core vs AI Narration</button>
-            <button class="arch-tab" data-tab="agents">Pattern 2: Confidence-Based Multi-Agent SDLC</button>
-          </div>
-
-          <div class="arch-tab-content active" id="tab-deterministic">
-            <div class="arch-grid">
-              <div class="arch-text">
-                <h3>Zero-Hallucination Financial Architecture</h3>
-                <p>
-                  In high-stakes domains (PFRDA PensionQuest and SIH Nishchay), LLMs are strictly forbidden from performing mathematical calculations, eligibility checks, or interest computations.
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">PensionQuest</h3>
+                <h4 class="project-subtitle">Gamified NPS Awareness Engine & Vernacular Voice AI</h4>
+                
+                <p class="project-pitch">
+                  <strong>The GTM Challenge:</strong> 92% of working Indians under 35 abandon National Pension System accounts due to cognitive overload.  
+                  <strong>The Product Solution:</strong> We transformed dry pension regulations into an interactive quest journey with RPG-style streaks, real-time compounding visualizers, and vernacular voice guidance (Hindi, Marathi, English).
                 </p>
-                <ul class="arch-list">
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <strong>Deterministic Core:</strong> Python/Pydantic rules engine computes all yields, taxes, and compound projections with mathematical precision.
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <strong>CI Linter Boundary:</strong> Strict AST-level lint checks reject any PR importing LLM or OpenAI/Claude modules inside <code>core/deterministic/</code>.
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <strong>AI Narration Layer:</strong> Claude & Sarvam AI ingest pre-calculated facts and convert them into natural, empathetic vernacular voice notes.
-                  </li>
-                </ul>
+
+                <div class="project-tech-badges">
+                  <span>FastAPI</span>
+                  <span>React Native (Expo)</span>
+                  <span>PostgreSQL</span>
+                  <span>Docker</span>
+                  <span>Redis</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://github.com/ShivamRaut1610/PensionQuest" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-cyber">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/PensionQuest#readme" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-solid fa-book-open"></i> Architecture Deck
+                  </a>
+                </div>
               </div>
-              <div class="arch-diagram font-mono">
-                <div class="diag-node">User Request / Financial Inputs</div>
-                <div class="diag-arrow">&darr;</div>
-                <div class="diag-box box-accent">
-                  <div class="box-title">&#128274; DETERMINISTIC ENGINE</div>
-                  <div class="box-desc">Python &bull; Pure Math &bull; Zero LLM Imports</div>
-                </div>
-                <div class="diag-arrow">&darr; Structured JSON (Exact Values)</div>
-                <div class="diag-box box-ai">
-                  <div class="box-title">&#129302; SARVAM AI / CLAUDE NARRATOR</div>
-                  <div class="box-desc">Converts JSON to Vernacular Audio / Story</div>
-                </div>
-                <div class="diag-arrow">&darr;</div>
-                <div class="diag-node">Empathetic, Provably Accurate Result</div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ PENSIONQUEST FUNNEL ]──────┐
+│ USER DROP-OFF :  92% [█████░] │
+│ QUEST ACTIVATION: 4.2x LIFT  │
+│ MATH CORE     : 100% VERIFIED│
+│ VERNACULAR AI : HI / MR / EN │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">AIR #2 National Winner</div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="arch-tab-content" id="tab-agents">
-            <div class="arch-grid">
-              <div class="arch-text">
-                <h3>Multi-Agent Autonomous Compliance (ITCWMS)</h3>
-                <p>
-                  Rather than relying on a single monolithic prompt, ITCWMS partitions software governance into distinct, role-specialized AI agents connected to an event bus.
+          <!-- 2. Arthvo -->
+          <article class="project-master-card" data-category="fintech design">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award secondary"><i class="fa-solid fa-gamepad"></i> GAMIFIED WEALTH UNIVERSE</span>
+              <span class="mono-meta">NEXT.JS 16 · REACT 19 · SUPABASE</span>
+            </div>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">Arthvo</h3>
+                <h4 class="project-subtitle">India's First Gamified Financial Awareness Universe</h4>
+                
+                <p class="project-pitch">
+                  <strong>Design & UI/UX Craft:</strong> Designed from scratch for Gen-Z citizens. Features custom badge iconography, an interactive quest journey tree, delay-cost simulations, and dark obsidian visual hierarchy.  
+                  <strong>GTM Strategy:</strong> Micro-learning loops designed for viral campus peer challenges and self-serve onboarding.
                 </p>
-                <ul class="arch-list">
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <strong>RequirementAgent:</strong> Validates user story completeness, security requirements, and acceptance criteria.
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <strong>DevelopmentAgent:</strong> Audits commits, diffs, and lint scores before pull requests can merge.
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <strong>Human-in-the-Loop Threshold:</strong> Decisions below an 85% confidence threshold halt automation and alert senior engineering leads via n8n.
-                  </li>
-                </ul>
+
+                <div class="project-tech-badges">
+                  <span>Next.js 16 (App Router)</span>
+                  <span>React 19</span>
+                  <span>TypeScript</span>
+                  <span>Supabase</span>
+                  <span>Tailwind v4</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://github.com/ShivamRaut1610/Arthvo" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-cyber">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                </div>
               </div>
-              <div class="arch-diagram font-mono">
-                <div class="diag-node">Git Commit / Spec Document</div>
-                <div class="diag-arrow">&darr; Webhook / Event Bus</div>
-                <div class="diag-grid-agents">
-                  <div class="mini-agent">Req Agent</div>
-                  <div class="mini-agent">Design Agent</div>
-                  <div class="mini-agent">Dev Agent</div>
-                  <div class="mini-agent">Test Agent</div>
-                </div>
-                <div class="diag-arrow">&darr; Confidence Score Evaluation</div>
-                <div class="diag-split">
-                  <div class="split-pass">&gt;85%: Auto-Approve</div>
-                  <div class="split-fail">&lt;85%: Human Escalation</div>
-                </div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ ARTHVO SIMULATOR ]─────────┐
+│ CORPUS PROJECTION: ₹ 4.2 Cr  │
+│ DELAY PENALTY    : -42% LOSS │
+│ BADGES EARNED    : 8 UNLOCKED│
+│ EXPERIENCE LEVEL : ASCENDANT │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Live on GitHub</div>
               </div>
             </div>
-          </div>
+          </article>
+
+          <!-- 3. CampusKart -->
+          <article class="project-master-card" data-category="design">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award live"><i class="fa-solid fa-globe"></i> LIVE DEMO ON GITHUB PAGES</span>
+              <span class="mono-meta">17 CONNECTED SCREENS · ZERO BUNDLER OVERHEAD</span>
+            </div>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">CampusKart</h3>
+                <h4 class="project-subtitle">Zero-Dependency Peer-to-Peer Campus Marketplace</h4>
+                
+                <p class="project-pitch">
+                  <strong>High-Craft UI/UX:</strong> 17 bespoke connected pages featuring full product catalogs, interactive cart, mock checkout, relational storage simulation, and seller onboarding. Runs entirely on zero-bundler Vanilla HTML5/CSS3/ES6+.
+                </p>
+
+                <div class="project-tech-badges">
+                  <span>HTML5</span>
+                  <span>Vanilla CSS3</span>
+                  <span>JavaScript ES6+</span>
+                  <span>LocalStorage Relational Mock</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://shivamraut1610.github.io/CampusKart/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/CampusKart" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-brands fa-github"></i> GitHub Source
+                  </a>
+                </div>
+              </div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ CAMPUSKART P2P ]───────────┐
+│ PAGES CONNECTED  : 17 SCREENS│
+│ CLIENT-SIDE DB   : RELATIONAL│
+│ BUNDLE OVERHEAD  : 0.0 KB    │
+│ STATUS           : DEPLOYED  │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Live GitHub Pages Demo</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. TokenSense & DevTools -->
+          <article class="project-master-card" data-category="devtools ai">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award"><i class="fa-solid fa-code"></i> DEVELOPER ADVOCACY & DEVTOOLS</span>
+              <span class="mono-meta">OPEN SOURCE PYTHON LIBRARY</span>
+            </div>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">TokenSense & LocalMind</h3>
+                <h4 class="project-subtitle">Developer Tooling & Tokenization Awareness Engine</h4>
+                
+                <p class="project-pitch">
+                  <strong>DevRel & Open Source:</strong> Built <strong>TokenSense</strong> to make AI developers token-conscious across OpenAI, Claude, and Gemini APIs. Contributor to <strong>LocalMind</strong> (SSoC Season 5) for privacy-first, zero-cloud local LLM document intelligence.
+                </p>
+
+                <div class="project-tech-badges">
+                  <span>Python</span>
+                  <span>Ollama</span>
+                  <span>FastAPI</span>
+                  <span>LangChain</span>
+                  <span>Token Economics</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://github.com/ShivamRaut1610/tokensense" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-cyber">
+                    <i class="fa-brands fa-github"></i> View TokenSense
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/localmind" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-brands fa-github"></i> View LocalMind
+                  </a>
+                </div>
+              </div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ TOKENSENSE TELEMETRY ]─────┐
+│ TOKEN AUDIT : ACTIVE [OLLAMA]│
+│ CONTEXT PRUNING : -38% COST  │
+│ DEVELOPER DX: 1-LINE IMPORT  │
+│ COMMUNITY   : SSoC SEASON 5  │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Open Source DevTools</div>
+              </div>
+            </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- Credentials & Skills -->
-    <section class="section credentials-section" id="credentials">
+    <!-- Interactive Command Terminal Section -->
+    <section class="section terminal-section" id="terminal">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">QUALIFICATIONS</span>
-          <h2 class="section-title">Skills & Credentials</h2>
-          <p class="section-desc">
-            Formal training, industry certifications, and technical proficiencies.
-          </p>
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-terminal"></i> DIRECT ACCESS CONSOLE</span>
         </div>
+        <h2 class="section-heading text-center">Interactive Cyber Terminal</h2>
+        <p class="section-subheading text-center">
+          Type commands like <code class="mono-code">gtm</code>, <code class="mono-code">design</code>, <code class="mono-code">projects</code>, <code class="mono-code">contact</code>, or <code class="mono-code">help</code> to query my dossier:
+        </p>
 
-        <div class="cred-grid">
-          <div class="glass-card cred-column">
-            <h3><i class="fa-solid fa-certificate"></i> Key Credentials</h3>
-            <ul class="cred-list">
-              <li>
-                <div class="cred-title">All India 2nd Rank — PFRDA National Hackathon</div>
-                <div class="cred-sub">Pension Fund Regulatory and Development Authority (2026)</div>
-              </li>
-              <li>
-                <div class="cred-title">IIT Ropar AI Minor Certification</div>
-                <div class="cred-sub">Foundations of Machine Learning & Deep Learning</div>
-              </li>
-              <li>
-                <div class="cred-title">Oracle Certified SQL Specialist</div>
-                <div class="cred-sub">Advanced Relational Modeling & Query Optimization</div>
-              </li>
-              <li>
-                <div class="cred-title">B.Tech in Computer Engineering (In Progress)</div>
-                <div class="cred-sub">MIT Academy of Engineering, Pune (Diploma Entry Route)</div>
-              </li>
-              <li>
-                <div class="cred-title">GSSoC 2026 Project Admin Applicant</div>
-                <div class="cred-sub">Open source mentoring and repository stewardship</div>
-              </li>
-            </ul>
+        <div class="terminal-card">
+          <div class="terminal-screen" id="terminalScreen">
+            <div class="term-line banner">
+              <pre class="term-ascii">
+   _____ __    _                         ____             __ 
+  / ___// /_  (_)   ______ _____ ___    / __ \____ ___  __/ /_
+  \__ \/ __ \/ / | / / __ `/ __ `__ \  / /_/ / __ `/ / / / __/
+ ___/ / / / / /| |/ / /_/ / / / / / / / _, _/ /_/ / /_/ / /_  
+/____/_/ /_/_/ |___/\__,_/_/ /_/ /_/ /_/ |_|\__,_/\__,_/\__/  
+[ SYSTEM: SHIVAM RAUT DOSSIER // TYPE 'help' FOR COMMANDS ]
+              </pre>
+            </div>
+            <div class="term-line greeting">Hello! I'm Shivam's virtual shell. Type <span class="highlight">help</span> to begin.</div>
           </div>
 
-          <div class="glass-card cred-column">
-            <h3><i class="fa-solid fa-code"></i> Technical Stack</h3>
-            <div class="skills-block">
-              <span class="skill-group-label">AI & Agentic Systems</span>
-              <div class="pill-group">
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">CrewAI</span>
-                <span class="tech-pill">LangChain / RAG</span>
-                <span class="tech-pill">Sarvam AI</span>
-                <span class="tech-pill">Bhashini</span>
-                <span class="tech-pill">NVIDIA Nemotron</span>
-                <span class="tech-pill">Prompt Engineering</span>
-              </div>
-            </div>
-
-            <div class="skills-block">
-              <span class="skill-group-label">Backend & Data</span>
-              <div class="pill-group">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">Oracle SQL</span>
-                <span class="tech-pill">Redis</span>
-                <span class="tech-pill">SQLAlchemy / Pydantic</span>
-                <span class="tech-pill">Google Apps Script</span>
-                <span class="tech-pill">REST APIs</span>
-              </div>
-            </div>
-
-            <div class="skills-block">
-              <span class="skill-group-label">Frontend & Mobile</span>
-              <div class="pill-group">
-                <span class="tech-pill">React.js</span>
-                <span class="tech-pill">React Native (Expo)</span>
-                <span class="tech-pill">TypeScript</span>
-                <span class="tech-pill">Vite</span>
-                <span class="tech-pill">HTML5 / CSS3</span>
-                <span class="tech-pill">Tailwind CSS</span>
-              </div>
-            </div>
-
-            <div class="skills-block">
-              <span class="skill-group-label">Tools & Infrastructure</span>
-              <div class="pill-group">
-                <span class="tech-pill">Docker & Compose</span>
-                <span class="tech-pill">Git / GitHub Actions</span>
-                <span class="tech-pill">n8n Automation</span>
-                <span class="tech-pill">Linux / Bash</span>
-                <span class="tech-pill">Netlify / Vercel</span>
-              </div>
-            </div>
-          </div>
+          <form class="terminal-input-bar" id="terminalForm">
+            <span class="term-prompt">shivam@fde:~$</span>
+            <input type="text" id="terminalInput" class="term-input" placeholder="Type a command (try: 'gtm', 'design', 'help')..." autocomplete="off" spellcheck="false">
+            <button type="submit" class="term-submit-btn">EXECUTE</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- Resume Section -->
-    <section class="section resume-section" id="resume">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">CURRICULUM VITAE</span>
-          <h2 class="section-title">New High-Impact Resume</h2>
-          <p class="section-desc">
-            Single-page, ATS-optimized view of verified experience, production systems, and metrics.
-          </p>
-        </div>
-
-        <div class="resume-wrapper glass-card">
-          <div class="resume-toolbar">
-            <div class="resume-status">
-              <i class="fa-solid fa-file-check"></i> ATS-Ready 2026 Edition
-            </div>
-            <div class="resume-btn-group">
-              <button class="btn btn-sm btn-primary" onclick="window.print()">
-                <i class="fa-solid fa-print"></i> Print / Save as PDF
-              </button>
-              <a href="../Shivam_Raut_Resume.pdf" target="_blank" class="btn btn-sm btn-secondary">
-                <i class="fa-solid fa-download"></i> Original PDF
-              </a>
-            </div>
-          </div>
-
-          <div class="resume-document" id="printable-resume">
-            <!-- Header -->
-            <div class="resume-doc-header">
-              <h1>SHIVAM RAUT</h1>
-              <div class="resume-contact-line">
-                <span>Pune, Maharashtra, India</span> &bull;
-                <a href="https://github.com/ShivamRaut1610" target="_blank">github.com/ShivamRaut1610</a> &bull;
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a> &bull;
-                <span>Computer Engineering Student & AI Systems Builder</span>
-              </div>
-            </div>
-
-            <!-- Education -->
-            <div class="resume-section-block">
-              <h4 class="resume-heading">EDUCATION & CERTIFICATIONS</h4>
-              <div class="resume-item">
-                <div class="resume-item-top">
-                  <strong>B.Tech in Computer Engineering</strong> — MIT Academy of Engineering, Pune
-                  <span class="date-range">2023 – 2026</span>
-                </div>
-                <div class="resume-item-sub">Direct Second Year Entry via Computer Diploma route.</div>
-              </div>
-              <div class="resume-cert-row">
-                <span><strong>Certifications:</strong> IIT Ropar AI Minor Certificate &bull; Oracle Certified SQL Associate &bull; NGO Analytics Trainee</span>
-              </div>
-            </div>
-
-            <!-- Experience -->
-            <div class="resume-section-block">
-              <h4 class="resume-heading">TECHNICAL EXPERIENCE</h4>
-              <div class="resume-item">
-                <div class="resume-item-top">
-                  <strong>Technical Lead & NGO Analytics Specialist</strong> — Disha Pariwar Charitable Trust
-                  <span class="date-range">Pune, India</span>
-                </div>
-                <ul class="resume-bullets">
-                  <li>Architected and hardened the end-to-end scholarship application portal across <strong>43 continuous release cycles (v43)</strong> to ensure zero-downtime reliability for underprivileged applicants.</li>
-                  <li>Implemented session token authorization, automated OTP verification, dynamic PDF generation, and Google Drive document vault for non-technical coordinators.</li>
-                  <li>Compiled a comprehensive Maharashtra State scholarship database of 100+ schemes with vernacular Marathi accessibility documentation.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Key Projects -->
-            <div class="resume-section-block">
-              <h4 class="resume-heading">FLAGSHIP PROJECTS</h4>
-
-              <div class="resume-item">
-                <div class="resume-item-top">
-                  <strong>PensionQuest — Gamified NPS Financial Engagement Engine</strong>
-                  <span class="date-range">National Rank #2</span>
-                </div>
-                <div class="resume-item-sub"><em>Tech Stack: FastAPI, Python 3.11, React Native (Expo), React.js, PostgreSQL, Redis, Docker</em></div>
-                <ul class="resume-bullets">
-                  <li>Won <strong>All India 2nd Rank</strong> at the PFRDA National Hackathon among thousands of national engineering entrants.</li>
-                  <li>Engineered a full-stack financial awareness platform integrating conversational AI, vernacular speech synthesis, and interactive compound interest calculators.</li>
-                  <li>Designed containerized multi-tier services managed via Docker Compose with automated API documentation and test suites.</li>
-                </ul>
-              </div>
-
-              <div class="resume-item">
-                <div class="resume-item-top">
-                  <strong>Nishchay — Micro-Enterprise Financial Advisory Assistant</strong>
-                  <span class="date-range">SIH 2026 (SIH26091)</span>
-                </div>
-                <div class="resume-item-sub"><em>Tech Stack: FastAPI, Pydantic v2, PostgreSQL, Sarvam AI, Bhashini, OSM Overpass</em></div>
-                <ul class="resume-bullets">
-                  <li>Designed an enterprise advisory assistant for the Ministry of Social Justice and Empowerment featuring strict mathematical determinism.</li>
-                  <li>Instituted an automated CI lint rule that completely isolates the deterministic financial core from probabilistic LLM narration to eliminate financial hallucination.</li>
-                  <li>Implemented hyper-local geospatial market mapping using OSM Overpass and voice accessibility via Sarvam AI & Bhashini APIs.</li>
-                </ul>
-              </div>
-
-              <div class="resume-item">
-                <div class="resume-item-top">
-                  <strong>ITCWMS — Intelligent IT Compliance & Workflow Monitoring System</strong>
-                  <span class="date-range">Autonomous Multi-Agent</span>
-                </div>
-                <div class="resume-item-sub"><em>Tech Stack: FastAPI, NVIDIA Nemotron-3, React, Vite, n8n, SQLAlchemy</em></div>
-                <ul class="resume-bullets">
-                  <li>Engineered a multi-agent orchestration architecture utilizing specialized agents (Requirement, Design, Development, Testing) to monitor SDLC compliance.</li>
-                  <li>Formulated confidence-scored decision gates routing tasks with &lt;85% confidence to human engineering managers via automated n8n webhooks.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Skills Summary -->
-            <div class="resume-section-block">
-              <h4 class="resume-heading">TECHNICAL SKILLS</h4>
-              <p class="resume-skills-text">
-                <strong>Languages:</strong> Python, SQL (Oracle), JavaScript/TypeScript, HTML5, CSS3, Bash.<br>
-                <strong>Frameworks & Libraries:</strong> FastAPI, React, React Native, Pydantic, SQLAlchemy, LangChain, CrewAI.<br>
-                <strong>AI & Data:</strong> Prompt Engineering, RAG Pipelines, Multi-Agent Systems, Sarvam AI, Bhashini, PostgreSQL, Redis.<br>
-                <strong>Developer Tools:</strong> Git, GitHub Actions, Docker, Docker Compose, Linux/WSL2, n8n, Postman, Netlify.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- Contact & Signal Station -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="glass-card contact-card-wrapper">
-          <div class="contact-content">
-            <span class="section-tag">LET'S CONNECT</span>
-            <h2 class="contact-title">Ready to build something impactful?</h2>
-            <p class="contact-text">
-              Whether you're looking for an AI Systems Engineer, Full-Stack Developer, or want to discuss multi-agent systems and fintech architectures, I'm always open to discussing new opportunities.
-            </p>
-            <div class="contact-meta-list">
-              <div class="contact-meta-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Pune, Maharashtra, India</span>
-              </div>
-              <div class="contact-meta-item">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>MIT Academy of Engineering</span>
-              </div>
-              <div class="contact-meta-item">
-                <i class="fa-solid fa-code-branch"></i>
-                <span>GitHub: <a href="https://github.com/ShivamRaut1610" target="_blank">@ShivamRaut1610</a></span>
-              </div>
-            </div>
+        <div class="contact-box">
+          <div class="section-badge-center">
+            <span class="pixel-badge"><i class="fa-solid fa-tower-broadcast"></i> TRANSMISSION CHANNEL</span>
           </div>
+          <h2 class="contact-title text-center">Initiate Signal</h2>
+          <p class="contact-sub text-center">
+            Actively interviewing for <strong>GTM Engineering</strong>, <strong>Forward Deployed Engineering (FDE)</strong>, <strong>Product Design</strong>, and <strong>AI Systems</strong> roles.
+          </p>
 
-          <div class="contact-form-box">
-            <div class="quick-copy-card">
-              <h3>Quick Connect Channels</h3>
-              <div class="channel-list">
-                <a href="https://github.com/ShivamRaut1610" target="_blank" class="channel-link">
-                  <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
-                  <div class="channel-info">
-                    <span class="channel-name">GitHub Profile</span>
-                    <span class="channel-sub">ShivamRaut1610</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
+          <div class="contact-methods">
+            
+            <a href="mailto:shivamraut.work@gmail.com" class="contact-pill" id="emailPill">
+              <i class="fa-solid fa-envelope"></i>
+              <span>shivamraut.work@gmail.com</span>
+              <button class="copy-btn" id="btnCopyEmail" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
+            </a>
 
-                <a href="https://linkedin.com" target="_blank" class="channel-link">
-                  <div class="channel-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                  <div class="channel-info">
-                    <span class="channel-name">LinkedIn</span>
-                    <span class="channel-sub">Connect & Network</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
+            <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>linkedin.com/in/shivamraut1610</span>
+            </a>
 
-                <div class="channel-link copy-email-box" id="copy-email-btn" style="cursor: pointer;">
-                  <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
-                  <div class="channel-info">
-                    <span class="channel-name">Email Outreach</span>
-                    <span class="channel-sub" id="email-text">shivam.systems.eng@gmail.com</span>
-                  </div>
-                  <i class="fa-solid fa-copy" id="copy-icon"></i>
-                </div>
-              </div>
-            </div>
+            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <i class="fa-brands fa-github"></i>
+              <span>github.com/ShivamRaut1610</span>
+            </a>
+
+            <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <i class="fa-brands fa-x-twitter"></i>
+              <span>@ShivamRaut1610</span>
+            </a>
+
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Case Study Modal -->
-  <div class="modal-overlay" id="case-study-modal">
-    <div class="modal-container glass-card">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <div class="modal-body" id="modal-content">
-        <!-- Injected via JavaScript -->
-      </div>
-    </div>
-  </div>
-
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-content">
+    <div class="container footer-layout">
       <div class="footer-left">
-        <span class="logo-code">&lt;SR /&gt;</span> Shivam Raut &copy; 2026. Designed with intentional engineering.
+        <span class="footer-code">&lt;SR /&gt; SHIVAM RAUT</span>
+        <span class="footer-sub">Designed with Deep Taste & Zero Corporate Fluff. Built in Vanilla HTML5 / CSS3 / ES6+.</span>
       </div>
       <div class="footer-right">
-        <a href="#hero">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+        <span class="mono-tag">© 2026 SHIVAM RAUT · MIT LICENSED</span>
       </div>
     </div>
   </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast"></div>
 
   <script src="app.js"></script>
 </body>
