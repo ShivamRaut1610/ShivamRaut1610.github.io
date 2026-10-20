@@ -110,6 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast(`Switched to ${persona.toUpperCase()} View`);
       }
     });
+  });
+
   // 3B. Solar / Obsidian Theme Toggle Engine
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const themeIcon = document.getElementById('themeIcon');
@@ -313,13 +315,66 @@ Taste is the ultimate moat.
 • OpenSource : SSoC Season 5 Contributor (LocalMind & TokenSense)
 • Values     : Authentic purpose, open access, zero faking`,
 
+    skills: `[TECHNICAL & ARCHITECTURAL CAPABILITIES]
+-------------------------------------------------------
+• GTM & Product : Empathetic Onboarding, Event Telemetry, Cohort Audits
+• UI/UX Craft   : Vanilla CSS3, Micro-Physics, Glassmorphism, 60fps
+• AI Systems    : Deterministic Math, Multi-Agent Systems, LangChain, Ollama
+• Engineering   : React 18/19, Next.js 16, FastAPI, PostgreSQL, Docker, Redis`,
+
+    status: `[SYSTEM STATUS: TELEMETRY]
+-------------------------------------------------------
+• Architecture : Cyber-Obsidian / 60 FPS
+• Persona Mode : GTM & Design Engineer
+• Core Engines : 6 Flagship Systems Deployed
+• Open Source  : SSoC Season 5 Contributor (TokenSense & LocalMind)
+• Availability : Open for Full-Time, Freelance & GTM Sprints`,
+
+    pensionquest: `[PROJECT: PENSIONQUEST]
+-------------------------------------------------------
+• Award    : All India Rank #2 Winner (PFRDA National Hackathon 2026)
+• Challenge: 92% of working Indians abandon NPS accounts
+• Solution : Gamified quest loops, real-time math, vernacular voice AI
+• Stack    : FastAPI · React Native · PostgreSQL · Redis · Docker
+• GitHub   : github.com/ShivamRaut1610/PensionQuest`,
+
+    arthvo: `[PROJECT: ARTHVO]
+-------------------------------------------------------
+• Vision   : Gamified Wealth & Compound Interest Universe
+• Stack    : Next.js 16 (App Router) · React 19 · TypeScript · Supabase
+• UI/UX    : Obsidian Glass, delay-cost simulations, XP leveling
+• GitHub   : github.com/ShivamRaut1610/Arthvo`,
+
+    campuskart: `[PROJECT: CAMPUSKART]
+-------------------------------------------------------
+• Vision   : Zero-bundler P2P Campus Marketplace
+• Scale    : 17 connected responsive screens
+• Tech     : Vanilla HTML5 · CSS3 · ES6+ (Zero external npm bloat)
+• Status   : Live Demo at shivamraut1610.github.io/CampusKart/`,
+
+    tokensense: `[PROJECT: TOKENSENSE & LOCALMIND]
+-------------------------------------------------------
+• Vision   : Token economics awareness for AI engineers & local LLMs
+• Program  : SSoC Season 5 Open Source Contributor
+• Stack    : Python · Ollama · LangChain · FastAPI
+• GitHub   : github.com/ShivamRaut1610/tokensense`,
+
     contact: `[TRANSMISSION CHANNELS]
 -------------------------------------------------------
-• Email    : shivamraut.work@gmail.com
-• LinkedIn : linkedin.com/in/shivamraut1610
-• GitHub   : github.com/ShivamRaut1610
-• X/Twitter: @ShivamRaut1610`
+• Email     : shivamraut.work@gmail.com
+• LinkedIn  : linkedin.com/in/shivamraut1610
+• GitHub    : github.com/ShivamRaut1610
+• X/Twitter : @ShivamRaut1610
+• Instagram : instagram.com/shivamraut1610
+• Behance   : behance.net/shivamraut1610
+• Substack  : substack.com/@shivamraut1610`
   };
+
+  // Command Aliases
+  termResponses.about = termResponses.whoami;
+  termResponses.bio = termResponses.whoami;
+  termResponses.social = termResponses.contact;
+  termResponses.links = termResponses.contact;
 
   if (terminalForm && terminalInput && terminalScreen) {
     terminalForm.addEventListener('submit', (e) => {
@@ -349,6 +404,18 @@ Taste is the ultimate moat.
       terminalInput.value = '';
       terminalScreen.scrollTop = terminalScreen.scrollHeight;
     });
+
+    // Click on any .highlight keyword in terminal to run it immediately
+    terminalScreen.addEventListener('click', (e) => {
+      const highlight = e.target.closest('.highlight');
+      if (highlight) {
+        const cmd = highlight.textContent.trim().toLowerCase();
+        if (cmd && termResponses[cmd]) {
+          terminalInput.value = cmd;
+          terminalForm.dispatchEvent(new Event('submit'));
+        }
+      }
+    });
   }
 
   // 7. Clipboard Buttons
@@ -375,18 +442,13 @@ Taste is the ultimate moat.
   const navMenu = document.getElementById('navMenu');
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
-      const isVisible = navMenu.style.display === 'flex';
-      navMenu.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.background = 'rgba(6, 8, 13, 0.98)';
-        navMenu.style.padding = '20px';
-        navMenu.style.borderBottom = '1px solid var(--border-glow)';
-      }
+      navMenu.classList.toggle('open');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
     });
   }
 
@@ -407,6 +469,22 @@ Taste is the ultimate moat.
       card.style.transform = '';
     });
   });
+
+  // 10. Floating Back to Top Button
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   function escapeHtml(text) {
     return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
