@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shivam Raut — GTM Engineer, Product Designer &amp; AI Builder</title>
-  <meta name="description" content="Shivam Raut — GTM Engineer, Thoughtful Product Designer, and Product Analytics Specialist based in Pune, India. AIR #2 PFRDA National Hackathon 2026. Believer in open source, purpose-driven engineering, and community.">
+  <title>Shivam Raut — GTM &amp; Design Engineer | Product Analytics &amp; AI Systems</title>
+  <meta name="description" content="Portfolio of Shivam Raut — GTM Engineer, Thoughtful Product Designer, Product Analytics Specialist, and AI Systems Builder. All India Rank #2 PFRDA National Hackathon Winner. Based in Pune, India.">
   <meta name="author" content="Shivam Raut">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="Shivam Raut, GTM Engineer, Product Designer, UI UX Designer, Product Analytics, AI Systems, Forward Deployed Engineer, Open Source Contributor, PensionQuest, Pulses.life, Kalpataru Labs, Pune India">
+  <meta name="keywords" content="Shivam Raut, GTM Engineer, Product Designer, UI UX Designer, Product Analytics, Forward Deployed Engineer, AI Systems, PensionQuest, Pulses.life, Kalpataru Labs, Pune India, Open Source Contributor">
   <link rel="canonical" href="https://shivamraut1610.github.io/">
 
-  <!-- Open Graph / Facebook / LinkedIn -->
+  <!-- Open Graph / Social Previews -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shivamraut1610.github.io/">
-  <meta property="og:title" content="Shivam Raut — GTM Engineer, Product Designer &amp; AI Builder">
-  <meta property="og:description" content="GTM Engineer, Thoughtful Product Designer, and Product Analytics Specialist. AIR #2 PFRDA National Hackathon 2026. Open source contributor and purposeful builder.">
+  <meta property="og:title" content="Shivam Raut — GTM &amp; Design Engineer">
+  <meta property="og:description" content="Building at the boundary of thoughtful design, deterministic AI, and programmatic GTM distribution. AIR #2 National Winner.">
   <meta property="og:image" content="https://shivamraut1610.github.io/shivam.jpg">
   <meta property="og:site_name" content="Shivam Raut Portfolio">
-  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ShivamRaut1610">
   <meta name="twitter:creator" content="@ShivamRaut1610">
-  <meta name="twitter:title" content="Shivam Raut — GTM Engineer, Product Designer &amp; AI Builder">
-  <meta name="twitter:description" content="GTM Engineer, Thoughtful Product Designer, and Product Analytics Specialist. Open source contributor and purposeful builder based in Pune, India.">
+  <meta name="twitter:title" content="Shivam Raut — GTM &amp; Design Engineer">
+  <meta name="twitter:description" content="GTM Engineer, Thoughtful Product Designer, and Product Analytics Specialist based in Pune, India. Open source contributor and purposeful builder.">
   <meta name="twitter:image" content="https://shivamraut1610.github.io/shivam.jpg">
 
-  <!-- JSON-LD Structured Data for Rich Search Results -->
+  <!-- JSON-LD Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,547 +49,735 @@
       "https://github.com/ShivamRaut1610",
       "https://linkedin.com/in/shivamraut1610",
       "https://x.com/ShivamRaut1610"
-    ],
-    "knowsAbout": [
-      "GTM Engineering",
-      "Product Design",
-      "UI/UX Design",
-      "Product Analytics",
-      "AI Systems Architecture",
-      "Open Source Software",
-      "Forward Deployed Engineering"
     ]
   }
   </script>
 
-  <!--
-    FONTS: Instrument Serif (editorial italic headings) + DM Sans (clean readable body) + Syne (bold labels)
-    Warmth + clarity + character.
-  -->
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-  <!-- Custom cursor: a lens that reacts to context -->
-  <div class="cursor" id="cursor">
-    <div class="cursor-inner" id="cursorInner"></div>
-    <span class="cursor-label" id="cursorLabel"></span>
-  </div>
+<body class="theme-obsidian">
+  <!-- Interactive Background Canvas & Grid Overlay -->
+  <div class="cyber-grid" id="cyberGrid"></div>
+  <div class="scanline-overlay" id="scanlineOverlay"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- Scroll progress bar at the top -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Nav -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner container">
-      <a href="#intro" class="nav-wordmark">Shivam Raut</a>
-
-      <div class="nav-center">
-        <a href="#story" class="nav-link">Story</a>
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#stack" class="nav-link">Stack</a>
-        <a href="#contact" class="nav-link">Contact</a>
+  <!-- Top System Telemetry Bar -->
+  <aside class="system-telemetry-bar">
+    <div class="container telemetry-inner">
+      <div class="telemetry-left">
+        <span class="status-indicator live"></span>
+        <span class="mono-tag">SYS::STATUS: 60 FPS // ONLINE</span>
+        <span class="telemetry-divider">|</span>
+        <span class="mono-tag" id="currentPersonaTag">MODE: GTM &amp; DESIGN TECHNOLOGIST</span>
       </div>
+      <div class="telemetry-right">
+        <span class="mono-tag">LOCATION: PUNE, INDIA (IST)</span>
+        <span class="telemetry-divider">|</span>
+        <a href="#contact" class="telemetry-action"><i class="fa-solid fa-satellite-dish"></i> SIGNAL OPEN</a>
+      </div>
+    </div>
+  </aside>
 
-      <div class="nav-end">
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-          <i class="fa-solid fa-sun" id="themeIcon"></i>
-          <span id="themeLabel">Light</span>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">[</span>
+        <span class="brand-code">SR</span>
+        <span class="brand-bracket">]</span>
+        <span class="brand-title">Shivam Raut</span>
+      </a>
+
+      <!-- Persona Switcher Pill -->
+      <div class="persona-switcher" role="tablist" aria-label="Perspective Switcher">
+        <button class="persona-btn active" data-persona="gtm" id="btnPersonaGtm">
+          <i class="fa-solid fa-rocket"></i> GTM &amp; Growth
         </button>
-        <a href="#contact" class="btn-hire magnetic" data-magnetic data-cursor-label="Let's talk">Work with me</a>
+        <button class="persona-btn" data-persona="design" id="btnPersonaDesign">
+          <i class="fa-solid fa-pen-nib"></i> Design &amp; UI/UX
+        </button>
+        <button class="persona-btn" data-persona="ai" id="btnPersonaAi">
+          <i class="fa-solid fa-brain"></i> AI &amp; Systems
+        </button>
+        <button class="persona-btn" data-persona="analytics" id="btnPersonaAnalytics">
+          <i class="fa-solid fa-chart-pie"></i> Analytics
+        </button>
       </div>
 
-      <button class="nav-hamburger" id="hamburger">
-        <span></span><span></span>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-item">Philosophy</a>
+        <a href="#design-lab" class="nav-item">Design Lab</a>
+        <a href="#projects" class="nav-item">Flagships</a>
+        <a href="#terminal" class="nav-item">Terminal</a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Solar/Obsidian Mode">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+          <span id="themeText">Solar Mode</span>
+        </button>
+        <a href="#contact" class="nav-item nav-item-cta">Work with me</a>
+      </nav>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars-staggered"></i>
       </button>
     </div>
-
-    <!-- Mobile drawer -->
-    <div class="nav-drawer" id="navDrawer">
-      <a href="#story" class="drawer-link" data-close-drawer>Story</a>
-      <a href="#work" class="drawer-link" data-close-drawer>Work</a>
-      <a href="#stack" class="drawer-link" data-close-drawer>Stack</a>
-      <a href="#contact" class="drawer-link" data-close-drawer>Contact</a>
-    </div>
-  </nav>
+  </header>
 
   <main>
-    <!-- ============================================================
-         INTRO
-         Not a hero section. An intro. A person talking.
-    ============================================================ -->
-    <section class="intro" id="intro">
-      <div class="container">
-        <div class="intro-inner">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-layout">
+        
+        <!-- Left: Hero Headline & Narrative -->
+        <div class="hero-text-col">
+          <div class="badge-row">
+            <span class="pixel-badge"><i class="fa-solid fa-trophy"></i> AIR #2 PFRDA HACKATHON</span>
+            <span class="pixel-badge secondary"><i class="fa-solid fa-gem"></i> HIGH-CRAFT UI/UX</span>
+          </div>
 
-          <!-- The photo -->
-          <div class="intro-photo reveal-up" data-delay="0">
-            <div class="photo-wrap" data-cursor-label="Shivam Raut">
-              <div class="photo-placeholder" id="photoEl">
-                <img src="shivam.jpg" alt="Shivam Raut — GTM & Design Engineer">
-              </div>
-              <div class="photo-orbit orbit-1"></div>
-              <div class="photo-orbit orbit-2"></div>
+          <h1 class="hero-heading" id="heroHeading">
+            Where <span class="highlight-gtm">GTM Velocity</span> meets <span class="highlight-design">Thoughtful Design</span> and <span class="highlight-ai">Deterministic AI</span>.
+          </h1>
+
+          <p class="hero-desc" id="heroDesc">
+            Hey, I'm Shivam. I am a <strong>GTM Engineer</strong>, <strong>Thoughtful Product Designer</strong>, and <strong>Product Analytics Specialist</strong> with a deep passion for open source, user adoption, and deterministic AI systems. Available for full-time roles, freelance projects, and growth sprints.
+          </p>
+
+          <!-- Core Metrics Strip -->
+          <div class="hero-stats-strip">
+            <div class="stat-pill">
+              <span class="stat-num">AIR #2</span>
+              <span class="stat-label">National Rank (PFRDA)</span>
             </div>
-            <div class="intro-badge">
-              <span class="badge-dot"></span>
-              Full-Time · Freelance · Advisory · Pune, India
+            <div class="stat-pill">
+              <span class="stat-num">17+</span>
+              <span class="stat-label">Production Screens Crafted</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">0%</span>
+              <span class="stat-label">AI Math Hallucination</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Obsessed with GTM</span>
             </div>
           </div>
 
-          <!-- The words -->
-          <div class="intro-text">
-            <p class="intro-kicker reveal-up" data-delay="100">GTM &amp; Design Engineer &nbsp;·&nbsp; All India Rank #2, PFRDA National Hackathon 2026 &nbsp;·&nbsp; Pune, India</p>
-
-            <h1 class="intro-heading reveal-up" data-delay="180">
-              I design, engineer &amp; distribute<br>
-              products <em>people actually use.</em>
-            </h1>
-
-            <p class="intro-body reveal-up" data-delay="260">
-              Hey, I'm Shivam. I'm a <strong>GTM Engineer</strong>, <strong>Thoughtful Product Designer</strong>, and <strong>Product Analytics Specialist</strong>. I don't just push pixels in Figma or write isolated backend code — I solve the hardest question in product: <em>why do good products fail to reach real humans, and how do we fix that?</em>
-            </p>
-
-            <p class="intro-body reveal-up" data-delay="320">
-              From winning AIR #2 at the national PFRDA hackathon to architecting voice-first health triage and rural ecosystems, I build end-to-end. Available for <strong>Full-Time Roles</strong>, <strong>Freelance Projects</strong>, and <strong>GTM &amp; Product Analytics Sprints</strong>.
-            </p>
-
-            <div class="intro-actions reveal-up" data-delay="400">
-              <a href="#work" class="btn-primary magnetic" data-magnetic data-cursor-label="Explore">
-                Explore Flagships <i class="fa-solid fa-arrow-right-long"></i>
-              </a>
-              <div class="intro-social">
-                <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="social-link magnetic" data-magnetic data-cursor-label="GitHub" title="GitHub">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="social-link magnetic" data-magnetic data-cursor-label="LinkedIn" title="LinkedIn">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="social-link magnetic" data-magnetic data-cursor-label="Twitter" title="X / Twitter">
-                  <i class="fa-brands fa-x-twitter"></i>
-                </a>
-              </div>
-            </div>
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-cyber">
+              <span>EXPLORE FLAGSHIPS</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#design-lab" class="btn btn-glass">
+              <i class="fa-solid fa-sliders"></i>
+              <span>INTERACTIVE DESIGN LAB</span>
+            </a>
+            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
           </div>
-
         </div>
 
-        <!-- Roles marquee strip -->
-        <div class="roles-strip reveal-up" data-delay="480">
-          <div class="roles-inner">
-            <span>GTM Engineering</span><i class="fa-solid fa-diamond"></i>
-            <span>Product Analytics & Funnels</span><i class="fa-solid fa-diamond"></i>
-            <span>Product Design & UI/UX</span><i class="fa-solid fa-diamond"></i>
-            <span>Freelance Product Engineering</span><i class="fa-solid fa-diamond"></i>
-            <span>Forward Deployed Engineering</span><i class="fa-solid fa-diamond"></i>
-            <span>AI Systems Architecture</span><i class="fa-solid fa-diamond"></i>
-            <span>Developer Advocacy</span><i class="fa-solid fa-diamond"></i>
-            <!-- duplicate for infinite scroll -->
-            <span>GTM Engineering</span><i class="fa-solid fa-diamond"></i>
-            <span>Product Analytics & Funnels</span><i class="fa-solid fa-diamond"></i>
-            <span>Product Design & UI/UX</span><i class="fa-solid fa-diamond"></i>
-            <span>Freelance Product Engineering</span><i class="fa-solid fa-diamond"></i>
-            <span>Forward Deployed Engineering</span><i class="fa-solid fa-diamond"></i>
-            <span>AI Systems Architecture</span><i class="fa-solid fa-diamond"></i>
-            <span>Developer Advocacy</span><i class="fa-solid fa-diamond"></i>
+        <!-- Right: Cyber Portrait HUD & Interactive ASCII Visualizer -->
+        <div class="hero-terminal-col">
+          
+          <!-- Holographic Cyber Portrait HUD with Real Photo -->
+          <div class="cyber-portrait-card">
+            <div class="portrait-hud-header">
+              <span class="hud-tag"><span class="dot-green"></span> ID::SHIVAM_RAUT // VERIFIED</span>
+              <span class="hud-coords">PUNE, IN // 18.52° N</span>
+            </div>
+            <div class="portrait-image-wrapper">
+              <img src="shivam.jpg" alt="Shivam Raut — GTM &amp; Design Engineer" class="portrait-photo">
+              <div class="portrait-scanline"></div>
+              <div class="hud-corner top-left"></div>
+              <div class="hud-corner top-right"></div>
+              <div class="hud-corner bottom-left"></div>
+              <div class="hud-corner bottom-right"></div>
+            </div>
+            <div class="portrait-hud-footer">
+              <span class="badge-mini success">OPEN FOR COLLABORATION</span>
+              <span class="mono-meta">FULL-TIME · FREELANCE · GTM SPRINTS</span>
+            </div>
           </div>
+          <div class="cyber-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title">shivam@design-technologist:~ (zsh)</div>
+              <div class="window-actions">
+                <button class="win-btn" id="btnCopyAscii" title="Copy Card"><i class="fa-regular fa-copy"></i></button>
+              </div>
+            </div>
+
+            <div class="window-body">
+              <pre class="ascii-art-hero" id="asciiArtBlock">
+  ____  _     _                     ____             _   
+ / ___|| |__ (_)_   ____ _ _ __ ___ |  _ \ __ _ _   _| |_ 
+ \___ \| '_ \| \ \ / / _` | '_ ` _ \| |_) / _` | | | | __|
+  ___) | | | | |\ V / (_| | | | | | |  _ < (_| | |_| | |_ 
+ |____/|_| |_|_| \_/ \__,_|_| |_| |_|_| \_\__,_|\__,_|\__|
+ ========================================================
+ [★] FOCUS    : GTM Engineering × High-Craft Product Design
+ [★] AI STACK : FastAPI · LangChain · Nemotron · Deterministic Core
+ [★] DESIGN   : Figma-to-Code · Obsidian Glass · Micro-Physics
+ [★] LOCATION : Pune, India // Open for Forward Deployed Roles
+              </pre>
+
+              <div class="terminal-quick-links">
+                <span class="cmd-prompt">$</span>
+                <span class="cmd-text">curl -s https://shivam.fyi/status</span>
+              </div>
+              <div class="terminal-output">
+                <div class="output-line"><span class="badge-mini success">LIVE</span> <strong>PensionQuest:</strong> AIR #2 Winner deployed on GitHub</div>
+                <div class="output-line"><span class="badge-mini accent">LIVE</span> <strong>CampusKart:</strong> 17-page P2P Marketplace live on Pages</div>
+                <div class="output-line"><span class="badge-mini warning">BUILD</span> <strong>Arthvo:</strong> Gamified Wealth Universe (Next 16 + Supabase)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Design & Aesthetic Lab -->
+    <section class="section design-lab-section" id="design-lab">
+      <div class="container">
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-palette"></i> LIVING DESIGN SYSTEM</span>
+        </div>
+        <h2 class="section-heading text-center">Interactive Design Lab & Tokens</h2>
+        <p class="section-subheading text-center">
+          Great design isn't static mockups—it is an interactive system of tokens, ergonomics, and micro-physics. Test my design tokens live on this entire website right now:
+        </p>
+
+        <div class="design-lab-grid">
+          
+          <!-- Control 1: Theme Accent Palette -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="mono-num">01 / PALETTE</span>
+              <h3>Accent Neon Channel</h3>
+            </div>
+            <p>Switch the active energetic frequency across all glowing vectors and typography:</p>
+            <div class="palette-swatches">
+              <button class="swatch-btn active" data-color="#00ffcc" style="--c: #00ffcc;" title="Cyber Cyan"></button>
+              <button class="swatch-btn" data-color="#a855f7" style="--c: #a855f7;" title="Electric Purple"></button>
+              <button class="swatch-btn" data-color="#10b981" style="--c: #10b981;" title="Phosphor Emerald"></button>
+              <button class="swatch-btn" data-color="#f59e0b" style="--c: #f59e0b;" title="Solar Amber"></button>
+              <button class="swatch-btn" data-color="#ff0055" style="--c: #ff0055;" title="Hyper Crimson"></button>
+            </div>
+          </div>
+
+          <!-- Control 2: Glassmorphism Blur -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="mono-num">02 / DEPTH</span>
+              <h3>Glassmorphic Blur Intensity</h3>
+            </div>
+            <p>Control the backdrop-filter diffusion of cards and navigation:</p>
+            <div class="slider-control">
+              <input type="range" id="blurSlider" min="4" max="32" value="16" step="2">
+              <span class="slider-val" id="blurVal">16px</span>
+            </div>
+          </div>
+
+          <!-- Control 3: CRT Scanlines -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="mono-num">03 / RETRO CRAFT</span>
+              <h3>CRT Scanlines & Grid</h3>
+            </div>
+            <p>Toggle tactile retro-futuristic CRT scanlines and coordinate matrix grid:</p>
+            <div class="toggle-group">
+              <button class="toggle-pill active" id="btnToggleScanlines">Scanlines: ON</button>
+              <button class="toggle-pill active" id="btnToggleGrid">Matrix Grid: ON</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         STORY
-         Shivam's real story. Not a skills list. A narrative.
-    ============================================================ -->
-    <section class="story" id="story">
+    <!-- Philosophy & The 4 Pillars -->
+    <section class="section philosophy-section" id="about">
       <div class="container">
-        <div class="story-label reveal-up">The long version</div>
-
-        <div class="story-grid">
-          <div class="story-sidebar reveal-up" data-delay="0">
-            <div class="story-year">2026</div>
-            <div class="story-stat">
-              <span class="stat-big">AIR #2</span>
-              <span class="stat-small">at PFRDA National Hackathon</span>
-            </div>
-            <div class="story-stat">
-              <span class="stat-big">5</span>
-              <span class="stat-small">production systems shipped</span>
-            </div>
-            <div class="story-stat">
-              <span class="stat-big">92%</span>
-              <span class="stat-small">the drop-off rate we went after</span>
-            </div>
-          </div>
-
-          <div class="story-body reveal-up" data-delay="150">
-            <p class="story-p story-p-large">
-              I started in code. Then I got obsessed with a different question — not <em>how to build software</em>, but <em>why most software quietly fails to reach people.</em>
-            </p>
-
-            <p class="story-p">
-              In 2026, my team competed in the PFRDA National Hackathon. The problem: 92% of working Indians under 35 had never opened a pension account — not because they couldn't afford it, but because the product was incomprehensible. The government had been trying for years with information portals and PDF guides.
-            </p>
-
-            <p class="story-p">
-              We didn't fix the pension system. We fixed the <em>story</em> around it. We built PensionQuest — a gamified quest engine with vernacular voice AI (Hindi, Marathi, English) that translated 30-year financial projections into something a 22-year-old in Pune could actually care about. We ranked All India #2.
-            </p>
-
-            <p class="story-p">
-              I am a <strong>creative, thoughtful designer</strong> who understands design end-to-end: from user psychology and cognitive clarity down to pixel-level CSS. Design without distribution remains unseen; technology without thoughtful design feels inaccessible. I bring the two together so software feels natural, respectful, and genuinely useful.
-            </p>
-
-            <p class="story-p">
-              Whether architecting a rural ecosystem (Kalpataru Labs), a multilingual voice health companion (Pulses.life), or financial awareness systems (PensionQuest &amp; Arthvo), my standard is grounded in empathy: <em>if it doesn't work for a real person with limited time and real-world constraints, it hasn't been built well enough.</em>
-            </p>
-
-            <!-- Authentic Purpose & Community Section -->
-            <div class="purpose-block">
-              <div class="purpose-card">
-                <div class="purpose-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                <h4>Technology as a Fundamental Right</h4>
-                <p>I believe access to technology and information is everyone's right, not an exclusive privilege. If someone needs technology to solve a real problem in their life, language and complexity shouldn't stand in their way.</p>
-              </div>
-              <div class="purpose-card">
-                <div class="purpose-icon"><i class="fa-solid fa-code-fork"></i></div>
-                <h4>Open Source &amp; Volunteering</h4>
-                <p>I actively contribute to open-source software and love volunteering, even at a small, grassroots level. Giving time to student builders, open libraries, and local developer communities is how we elevate the ecosystem together.</p>
-              </div>
-              <div class="purpose-card">
-                <div class="purpose-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h4>Zero Pretension, Pure Purpose</h4>
-                <p>I don't believe in vanity metrics or performative tech hype. Every line of code, every interface design, and every product sprint is executed with real purpose, honesty, and deep respect for the people using it.</p>
-              </div>
-            </div>
-
-            <blockquote class="story-quote">
-              "Understand all design — from human psychology to UI/UX. Build it with honesty, share it with purpose, and treat every user with respect."
-            </blockquote>
-          </div>
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-compass-drafting"></i> CORE PHILOSOPHY</span>
         </div>
+        <h2 class="section-heading text-center">Architectural Taste & Manifesto</h2>
+        <p class="section-subheading text-center">
+          Software that scales must balance human emotion, mathematical certainty, and distribution velocity.
+        </p>
 
-        <!-- What I focus on - four core pillars -->
-        <div class="focus-grid">
-          <div class="focus-card reveal-up" data-delay="0" data-cursor-label="GTM">
-            <div class="focus-number">01</div>
-            <h3 class="focus-title">GTM Engineering</h3>
-            <p class="focus-desc">
-              Building programmatic distribution infrastructure. Self-serve onboarding loops, viral vectors, activation mechanics, and customer onramps. Software without distribution is a ghost town.
-            </p>
+        <div class="pillars-grid">
+          
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="pillar-index">PILLAR I</span>
+            <h3>GTM Obsession</h3>
+            <p>Code that nobody adopts is dead code. I build self-serve onramps, virality loops, and telemetry that convert users within the first 60 seconds.</p>
+            <div class="pillar-tag">Adoption Velocity</div>
           </div>
-          <div class="focus-card reveal-up" data-delay="60" data-cursor-label="Analytics">
-            <div class="focus-number">02</div>
-            <h3 class="focus-title">Product Analytics</h3>
-            <p class="focus-desc">
-              Diagnosing cohort drop-offs, user session behavior, and funnel friction. Defining instrumentation schemas, tracking events that actually matter, and turning telemetry into high-conviction product iterations.
-            </p>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <span class="pillar-index">PILLAR II</span>
+            <h3>High-Craft Product UI/UX</h3>
+            <p>Design is not decoration; it is cognitive clarity. Micro-animations, responsive typography, and tactile feedback make complex systems feel intuitive.</p>
+            <div class="pillar-tag">Figma &rarr; Clean CSS/JS</div>
           </div>
-          <div class="focus-card reveal-up" data-delay="120" data-cursor-label="Design">
-            <div class="focus-number">03</div>
-            <h3 class="focus-title">Product Design & UI/UX</h3>
-            <p class="focus-desc">
-              I understand design from user psychology down to pixel-level CSS. Crafting interfaces that feel tactile, immediate, and frictionless — bridging Figma and production code with zero translation loss.
-            </p>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span class="pillar-index">PILLAR III</span>
+            <h3>Deterministic Math & AI</h3>
+            <p>In healthcare and finance, LLMs must never compute numbers. We isolate core math in deterministic algorithms and use AI purely for vernacular storytelling.</p>
+            <div class="pillar-tag">Zero Hallucinations</div>
           </div>
-          <div class="focus-card reveal-up" data-delay="180" data-cursor-label="AI">
-            <div class="focus-number">04</div>
-            <h3 class="focus-title">AI Systems & FDE</h3>
-            <p class="focus-desc">
-              Forward Deployed Engineering for production AI. Zero-hallucination deterministic math engines combined with natural vernacular voice narration. Scalable, auditable, and built for real users.
-            </p>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-users-rays"></i></div>
+            <span class="pillar-index">PILLAR IV</span>
+            <h3>Community &amp; Developer Advocacy</h3>
+            <p>Building in public through open source (SSoC Season 5, TokenSense), hackathon leadership, and developer tooling that empowers other builders.</p>
+            <div class="pillar-tag">Open Source &amp; DevRel</div>
           </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-code-fork"></i></div>
+            <span class="pillar-index">PILLAR V</span>
+            <h3>Open Source as a Right &amp; Purpose</h3>
+            <p>Technology is a fundamental human right, not an exclusive privilege. I actively contribute to open source, volunteer with student builders, and execute with zero faking and real purpose.</p>
+            <div class="pillar-tag">Public Good &amp; Ethos</div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         WORK
-         Real projects. Real context. What problem, what solution, what happened.
-    ============================================================ -->
-    <section class="work" id="work">
+    <!-- Flagship Systems Showcase -->
+    <section class="section projects-section" id="projects">
       <div class="container">
-        <div class="work-header">
-          <div class="section-label reveal-up">Flagships</div>
-          <h2 class="section-heading reveal-up" data-delay="80">
-            Things I built<br>that actually <em>shipped.</em>
-          </h2>
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-folder-tree"></i> PROVEN ARCHITECTURES</span>
+        </div>
+        <h2 class="section-heading text-center">Flagship Projects & Case Studies</h2>
+        <p class="section-subheading text-center">
+          Each system designed from 0-to-1: combining user psychology, visual excellence, and hardened backend engineering.
+        </p>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-pill active" data-filter="all">All Flagships</button>
+          <button class="filter-pill" data-filter="fintech">FinTech &amp; GTM</button>
+          <button class="filter-pill" data-filter="health">Health &amp; AI</button>
+          <button class="filter-pill" data-filter="design">UI/UX &amp; Marketplace</button>
+          <button class="filter-pill" data-filter="ecosystem">Ecosystems &amp; OS</button>
+          <button class="filter-pill" data-filter="devtools">DevTools &amp; DevRel</button>
         </div>
 
-        <!-- Filter -->
-        <div class="work-filters reveal-up" data-delay="120">
-          <button class="wf-btn active" data-filter="all">All</button>
-          <button class="wf-btn" data-filter="fintech">FinTech</button>
-          <button class="wf-btn" data-filter="health">Health &amp; AI</button>
-          <button class="wf-btn" data-filter="design">Design &amp; UI/UX</button>
-          <button class="wf-btn" data-filter="ecosystem">Ecosystems</button>
-          <button class="wf-btn" data-filter="devtools">DevTools</button>
-        </div>
-
-        <div class="projects" id="projectsList">
+        <div class="projects-master-grid">
 
           <!-- 1. PensionQuest -->
-          <article class="project reveal-up" data-category="fintech ai" data-delay="0">
-            <div class="project-meta">
-              <span class="project-num">01</span>
-              <span class="project-tag tag-win">🏆 AIR #2 National Winner</span>
+          <article class="project-master-card" data-category="fintech ai">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award"><i class="fa-solid fa-trophy"></i> ALL INDIA RANK #2 WINNER</span>
+              <span class="mono-meta">PFRDA NATIONAL HACKATHON 2026</span>
             </div>
-            <div class="project-body">
-              <h3 class="project-name">PensionQuest</h3>
-              <p class="project-context">
-                <strong>The real problem wasn't technology.</strong> 92% of Indian youth under 35 had no pension account — because the existing tools spoke like government forms. We spoke like a game.
-              </p>
-              <p class="project-desc">
-                Built a gamified NPS awareness engine with RPG quest paths, real-time compounding visualizers, and a vernacular voice AI coach in Hindi, Marathi, and English. The deterministic math core runs zero LLM computation — AI only narrates verified numbers.
-              </p>
-              <div class="project-stack">
-                <span>FastAPI</span><span>React Native (Expo)</span><span>PostgreSQL 15</span><span>Redis</span><span>Docker</span>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">PensionQuest</h3>
+                <h4 class="project-subtitle">Gamified NPS Awareness Engine & Vernacular Voice AI</h4>
+                
+                <p class="project-pitch">
+                  <strong>The GTM Challenge:</strong> 92% of working Indians under 35 abandon National Pension System accounts due to cognitive overload.  
+                  <strong>The Product Solution:</strong> We transformed dry pension regulations into an interactive quest journey with RPG-style streaks, real-time compounding visualizers, and vernacular voice guidance (Hindi, Marathi, English).
+                </p>
+
+                <div class="project-tech-badges">
+                  <span>FastAPI</span>
+                  <span>React Native (Expo)</span>
+                  <span>PostgreSQL</span>
+                  <span>Docker</span>
+                  <span>Redis</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://github.com/ShivamRaut1610/PensionQuest" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-cyber">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/PensionQuest#readme" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-solid fa-book-open"></i> Architecture Deck
+                  </a>
+                </div>
+              </div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ PENSIONQUEST FUNNEL ]──────┐
+│ USER DROP-OFF :  92% [█████░] │
+│ QUEST ACTIVATION: 4.2x LIFT  │
+│ MATH CORE     : 100% VERIFIED│
+│ VERNACULAR AI : HI / MR / EN │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">AIR #2 National Winner</div>
               </div>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/ShivamRaut1610/PensionQuest" target="_blank" rel="noopener noreferrer" class="project-link magnetic" data-magnetic data-cursor-label="View">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
           </article>
-
-          <!-- Divider -->
-          <div class="project-divider"></div>
 
           <!-- 2. Pulses.life -->
-          <article class="project reveal-up" data-category="health design" data-delay="40">
-            <div class="project-meta">
-              <span class="project-num">02</span>
-              <span class="project-tag tag-live">🌐 Live Web &amp; Voice Demo</span>
+          <article class="project-master-card" data-category="health ai">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award live"><i class="fa-solid fa-heart-pulse"></i> LIVE DEMO ON GITHUB PAGES</span>
+              <span class="mono-meta">MIT ADT HACKATHON · MULTILINGUAL AI HEALTH</span>
             </div>
-            <div class="project-body">
-              <h3 class="project-name">Pulses.life</h3>
-              <p class="project-context">
-                <strong>Language should never be a barrier to emergency healthcare in Bharat.</strong> Most medical tools assume English literacy. Pulses speaks your mother tongue.
-              </p>
-              <p class="project-desc">
-                Voice-first, multilingual AI health companion and emergency hospital finder built for MIT ADT Hackathon. Integrates Sarvam AI and Groq for speech-to-speech vernacular guidance, real CGHS government hospital routing with GPS distance ranking, and a one-tap Call 108 emergency mode.
-              </p>
-              <div class="project-stack">
-                <span>React 18</span><span>Sarvam AI</span><span>Groq</span><span>FastAPI</span><span>CGHS Hospital DB</span><span>Geolocation</span>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">Pulses.life</h3>
+                <h4 class="project-subtitle">Voice-First Multilingual AI Healthcare Triage &amp; 108 Emergency Hospital Routing</h4>
+                
+                <p class="project-pitch">
+                  <strong>The Healthcare Barrier:</strong> 22 scheduled Indian languages, but most medical apps require English literacy. Pulses lets patients describe symptoms by voice in their native tongue and returns instant clinical triage and real CGHS hospital navigation with GPS distance ranking.
+                </p>
+
+                <div class="project-tech-badges">
+                  <span>React 18</span>
+                  <span>Sarvam AI</span>
+                  <span>Groq</span>
+                  <span>FastAPI</span>
+                  <span>CGHS Hospital DB</span>
+                  <span>Geolocation</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://shivamraut1610.github.io/Pulses.life/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/Pulses.life" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-brands fa-github"></i> GitHub Source
+                  </a>
+                </div>
+              </div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ PULSES.LIFE TRIAGE ]───────┐
+│ VOICE TRIAGE : 22 LANGUAGES  │
+│ EMERGENCY    : 1-TAP CALL 108│
+│ GPS ROUTING  : CGHS HOSPITALS│
+│ SPEECH CORE  : SARVAM AI     │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Live GitHub Pages Demo</div>
               </div>
             </div>
-            <div class="project-actions">
-              <a href="https://shivamraut1610.github.io/Pulses.life/" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary magnetic" data-magnetic data-cursor-label="Live Site">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-              <a href="https://github.com/ShivamRaut1610/Pulses.life" target="_blank" rel="noopener noreferrer" class="project-link magnetic" data-magnetic data-cursor-label="View">
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </div>
           </article>
-
-          <div class="project-divider"></div>
 
           <!-- 3. Kalpataru Labs -->
-          <article class="project reveal-up" data-category="ecosystem design" data-delay="80">
-            <div class="project-meta">
-              <span class="project-num">03</span>
-              <span class="project-tag tag-win">🌱 Full-Stack AgriTech OS</span>
+          <article class="project-master-card" data-category="ecosystem design">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award"><i class="fa-solid fa-seedling"></i> FULL-STACK AGRITECH ARCHITECTURE</span>
+              <span class="mono-meta">12 INTERCONNECTED PRODUCTS · 140M FARMERS</span>
             </div>
-            <div class="project-body">
-              <h3 class="project-name">Kalpataru Labs Ecosystem</h3>
-              <p class="project-context">
-                <strong>"If it doesn't work for a farmer in Bundelkhand on a 2G phone, it hasn't been designed well enough."</strong>
-              </p>
-              <p class="project-desc">
-                Deep strategy and systems architecture for India's most ambitious full-stack agriculture ecosystem. 12 interconnected products — KrishiAI (vernacular disease diagnostics), MandiSense (price intelligence), JalSmart (irrigation telematics), CreditX (alternative credit scoring), and RuralOS — tied together by a compounding data flywheel for 140M farm households.
-              </p>
-              <div class="project-stack">
-                <span>Product Strategy</span><span>GTM Architecture</span><span>System Design</span><span>Rural Inclusivity</span><span>Flywheel Economics</span>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">Kalpataru Labs</h3>
+                <h4 class="project-subtitle">Complete Operating System Architecture for Indian Agriculture</h4>
+                
+                <p class="project-pitch">
+                  <strong>Ecosystem Over Products:</strong> Deep product strategy and system architecture for Indian agriculture. Built on the core belief: <em>"If it doesn't work for a farmer in Bundelkhand on a 2G phone, it hasn't been designed well enough."</em> Interconnects KrishiAI, MandiSense, JalSmart, and CreditX via a compounding data flywheel.
+                </p>
+
+                <div class="project-tech-badges">
+                  <span>Product Strategy</span>
+                  <span>Rural Inclusivity</span>
+                  <span>GTM Flywheel</span>
+                  <span>Alternative Credit Scoring</span>
+                  <span>IoT Telematics</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#contact" class="btn btn-sm btn-cyber">
+                    <i class="fa-solid fa-book-open"></i> Request Strategy Deck
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="project-actions">
-              <a href="#contact" class="project-link magnetic" data-magnetic data-cursor-label="Read Doc">
-                <i class="fa-solid fa-book-open"></i> Strategy Deck
-              </a>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ KALPATARU ECOSYSTEM ]──────┐
+│ PRODUCTS     : 12 CONNECTED  │
+│ FARMER REACH : 140M TARGET   │
+│ RURAL UX     : 2G/OFFLINE 1ST│
+│ DATA MOAT    : FLUID FLYWHEEL│
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Deep Strategy Deck</div>
+              </div>
             </div>
           </article>
 
-          <div class="project-divider"></div>
+          <!-- 2. Arthvo -->
+          <article class="project-master-card" data-category="fintech design">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award secondary"><i class="fa-solid fa-gamepad"></i> GAMIFIED WEALTH UNIVERSE</span>
+              <span class="mono-meta">NEXT.JS 16 · REACT 19 · SUPABASE</span>
+            </div>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">Arthvo</h3>
+                <h4 class="project-subtitle">India's First Gamified Financial Awareness Universe</h4>
+                
+                <p class="project-pitch">
+                  <strong>Design & UI/UX Craft:</strong> Designed from scratch for Gen-Z citizens. Features custom badge iconography, an interactive quest journey tree, delay-cost simulations, and dark obsidian visual hierarchy.  
+                  <strong>GTM Strategy:</strong> Micro-learning loops designed for viral campus peer challenges and self-serve onboarding.
+                </p>
 
-          <!-- 4. Arthvo -->
-          <article class="project reveal-up" data-category="fintech design" data-delay="120">
-            <div class="project-meta">
-              <span class="project-num">04</span>
-              <span class="project-tag tag-build">In Active Development</span>
-            </div>
-            <div class="project-body">
-              <h3 class="project-name">Arthvo</h3>
-              <p class="project-context">
-                <strong>Financial literacy for Gen-Z failed because it was informational, not experiential.</strong> Nobody learns about compounding from a dry PDF.
-              </p>
-              <p class="project-desc">
-                India's first gamified financial awareness universe — built on Next.js 16 App Router and React 19. Features an interactive delay-penalty wealth simulator, 6-language localization, quest progression system, and a custom design system in Tailwind v4.
-              </p>
-              <div class="project-stack">
-                <span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Supabase</span><span>Tailwind v4</span>
+                <div class="project-tech-badges">
+                  <span>Next.js 16 (App Router)</span>
+                  <span>React 19</span>
+                  <span>TypeScript</span>
+                  <span>Supabase</span>
+                  <span>Tailwind v4</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://github.com/ShivamRaut1610/Arthvo" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-cyber">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/ShivamRaut1610/Arthvo" target="_blank" rel="noopener noreferrer" class="project-link magnetic" data-magnetic data-cursor-label="View">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ ARTHVO SIMULATOR ]─────────┐
+│ CORPUS PROJECTION: ₹ 4.2 Cr  │
+│ DELAY PENALTY    : -42% LOSS │
+│ BADGES EARNED    : 8 UNLOCKED│
+│ EXPERIENCE LEVEL : ASCENDANT │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Live on GitHub</div>
+              </div>
             </div>
           </article>
 
-          <div class="project-divider"></div>
+          <!-- 3. CampusKart -->
+          <article class="project-master-card" data-category="design">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award live"><i class="fa-solid fa-globe"></i> LIVE DEMO ON GITHUB PAGES</span>
+              <span class="mono-meta">17 CONNECTED SCREENS · ZERO BUNDLER OVERHEAD</span>
+            </div>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">CampusKart</h3>
+                <h4 class="project-subtitle">Zero-Dependency Peer-to-Peer Campus Marketplace</h4>
+                
+                <p class="project-pitch">
+                  <strong>High-Craft UI/UX:</strong> 17 bespoke connected pages featuring full product catalogs, interactive cart, mock checkout, relational storage simulation, and seller onboarding. Runs entirely on zero-bundler Vanilla HTML5/CSS3/ES6+.
+                </p>
 
-          <!-- 5. CampusKart -->
-          <article class="project reveal-up" data-category="design" data-delay="160">
-            <div class="project-meta">
-              <span class="project-num">05</span>
-              <span class="project-tag tag-live">🌐 Live on GitHub Pages</span>
-            </div>
-            <div class="project-body">
-              <h3 class="project-name">CampusKart</h3>
-              <p class="project-context">
-                <strong>A proof that pure craft beats unnecessary framework bloat.</strong> Fully functional P2P campus marketplace — no React, no build step, no framework. Zero runtime overhead.
-              </p>
-              <p class="project-desc">
-                17 hand-crafted connected screens. A custom in-browser relational database engine over localStorage with 7 tables (products, users, orders, reviews, coupons, messages, wishlist). Luhn-algorithm payment validation, UPI/card/COD checkout simulation, and a developer DB dashboard.
-              </p>
-              <div class="project-stack">
-                <span>HTML5 Semantic</span><span>CSS3 Custom System</span><span>Vanilla JS ES6+</span><span>LocalStorage DB</span>
+                <div class="project-tech-badges">
+                  <span>HTML5</span>
+                  <span>Vanilla CSS3</span>
+                  <span>JavaScript ES6+</span>
+                  <span>LocalStorage Relational Mock</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://shivamraut1610.github.io/CampusKart/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/CampusKart" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-brands fa-github"></i> GitHub Source
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="project-actions">
-              <a href="https://shivamraut1610.github.io/CampusKart/" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary magnetic" data-magnetic data-cursor-label="Open Live">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-              <a href="https://github.com/ShivamRaut1610/CampusKart" target="_blank" rel="noopener noreferrer" class="project-link magnetic" data-magnetic data-cursor-label="View">
-                <i class="fa-brands fa-github"></i>
-              </a>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ CAMPUSKART P2P ]───────────┐
+│ PAGES CONNECTED  : 17 SCREENS│
+│ CLIENT-SIDE DB   : RELATIONAL│
+│ BUNDLE OVERHEAD  : 0.0 KB    │
+│ STATUS           : DEPLOYED  │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Live GitHub Pages Demo</div>
+              </div>
             </div>
           </article>
 
-          <div class="project-divider"></div>
-
-          <!-- 6. TokenSense -->
-          <article class="project reveal-up" data-category="devtools" data-delay="200">
-            <div class="project-meta">
-              <span class="project-num">06</span>
-              <span class="project-tag tag-build">Open Source · SSoC Season 5</span>
+          <!-- 4. TokenSense & DevTools -->
+          <article class="project-master-card" data-category="devtools ai">
+            <div class="card-glow-edge"></div>
+            <div class="card-top-meta">
+              <span class="badge-award"><i class="fa-solid fa-code"></i> DEVELOPER ADVOCACY & DEVTOOLS</span>
+              <span class="mono-meta">OPEN SOURCE PYTHON LIBRARY</span>
             </div>
-            <div class="project-body">
-              <h3 class="project-name">TokenSense + LocalMind</h3>
-              <p class="project-context">
-                <strong>Developer advocacy is a product problem.</strong> Most AI teams burn budget on tokens they can't measure or audit.
-              </p>
-              <p class="project-desc">
-                TokenSense: an open-source Python library for token-aware AI development across OpenAI, Claude, and Gemini. LocalMind: offline, zero-cloud LLM document intelligence — contributing as part of SSoC Season 5.
-              </p>
-              <div class="project-stack">
-                <span>Python</span><span>FastAPI</span><span>Ollama</span><span>LangChain</span>
+            
+            <div class="card-content-split">
+              <div class="card-info">
+                <h3 class="project-title">TokenSense & LocalMind</h3>
+                <h4 class="project-subtitle">Developer Tooling & Tokenization Awareness Engine</h4>
+                
+                <p class="project-pitch">
+                  <strong>DevRel & Open Source:</strong> Built <strong>TokenSense</strong> to make AI developers token-conscious across OpenAI, Claude, and Gemini APIs. Contributor to <strong>LocalMind</strong> (SSoC Season 5) for privacy-first, zero-cloud local LLM document intelligence.
+                </p>
+
+                <div class="project-tech-badges">
+                  <span>Python</span>
+                  <span>Ollama</span>
+                  <span>FastAPI</span>
+                  <span>LangChain</span>
+                  <span>Token Economics</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://github.com/ShivamRaut1610/tokensense" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-cyber">
+                    <i class="fa-brands fa-github"></i> View TokenSense
+                  </a>
+                  <a href="https://github.com/ShivamRaut1610/localmind" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-brands fa-github"></i> View LocalMind
+                  </a>
+                </div>
+              </div>
+
+              <div class="card-ascii-preview">
+                <pre class="mini-ascii">
+┌─[ TOKENSENSE TELEMETRY ]─────┐
+│ TOKEN AUDIT : ACTIVE [OLLAMA]│
+│ CONTEXT PRUNING : -38% COST  │
+│ DEVELOPER DX: 1-LINE IMPORT  │
+│ COMMUNITY   : SSoC SEASON 5  │
+└──────────────────────────────┘
+                </pre>
+                <div class="card-visual-tag">Open Source DevTools</div>
               </div>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/ShivamRaut1610/tokensense" target="_blank" rel="noopener noreferrer" class="project-link magnetic" data-magnetic data-cursor-label="View">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         STACK
-    ============================================================ -->
-    <section class="stack" id="stack">
+    <!-- Interactive Command Terminal Section -->
+    <section class="section terminal-section" id="terminal">
       <div class="container">
-        <div class="section-label reveal-up">Tools</div>
-        <h2 class="section-heading reveal-up" data-delay="60">The full kit.</h2>
+        <div class="section-badge-center">
+          <span class="pixel-badge"><i class="fa-solid fa-terminal"></i> DIRECT ACCESS CONSOLE</span>
+        </div>
+        <h2 class="section-heading text-center">Interactive Cyber Terminal</h2>
+        <p class="section-subheading text-center">
+          Type commands like <code class="mono-code">gtm</code>, <code class="mono-code">design</code>, <code class="mono-code">projects</code>, <code class="mono-code">contact</code>, or <code class="mono-code">help</code> to query my dossier:
+        </p>
 
-        <div class="stack-table reveal-up" data-delay="120">
-          <div class="stack-row">
-            <div class="stack-col-label">Design & Frontend</div>
-            <div class="stack-col-items">
-              <span>Figma</span><span>React 19</span><span>Next.js 16</span>
-              <span>TypeScript</span><span>Tailwind v4</span><span>Vanilla HTML/CSS/JS</span>
-              <span>Framer Motion</span>
+        <div class="terminal-card">
+          <div class="terminal-screen" id="terminalScreen">
+            <div class="term-line banner">
+              <pre class="term-ascii">
+   _____ __    _                         ____             __ 
+  / ___// /_  (_)   ______ _____ ___    / __ \____ ___  __/ /_
+  \__ \/ __ \/ / | / / __ `/ __ `__ \  / /_/ / __ `/ / / / __/
+ ___/ / / / / /| |/ / /_/ / / / / / / / _, _/ /_/ / /_/ / /_  
+/____/_/ /_/_/ |___/\__,_/_/ /_/ /_/ /_/ |_|\__,_/\__,_/\__/  
+[ SYSTEM: SHIVAM RAUT DOSSIER // TYPE 'help' FOR COMMANDS ]
+              </pre>
             </div>
+            <div class="term-line greeting">Hello! I'm Shivam's virtual shell. Type <span class="highlight">help</span> to begin.</div>
           </div>
-          <div class="stack-row">
-            <div class="stack-col-label">AI & Backend</div>
-            <div class="stack-col-items">
-              <span>FastAPI</span><span>LangChain</span><span>NVIDIA Nemotron-3</span>
-              <span>RAG Pipelines</span><span>PostgreSQL</span><span>Redis</span><span>Pydantic v2</span>
-            </div>
-          </div>
-          <div class="stack-row">
-            <div class="stack-col-label">Mobile & Infra</div>
-            <div class="stack-col-items">
-              <span>React Native (Expo)</span><span>Docker Compose</span><span>Supabase</span>
-              <span>GitHub Actions</span><span>n8n</span><span>WSL2</span>
-            </div>
-          </div>
-          <div class="stack-row">
-            <div class="stack-col-label">GTM & Analytics</div>
-            <div class="stack-col-items">
-              <span>Funnel Design</span><span>Activation Metrics</span><span>Self-Serve Onboarding</span>
-              <span>A/B Architecture</span><span>Product Telemetry</span>
-            </div>
-          </div>
+
+          <form class="terminal-input-bar" id="terminalForm">
+            <span class="term-prompt">shivam@fde:~$</span>
+            <input type="text" id="terminalInput" class="term-input" placeholder="Type a command (try: 'gtm', 'design', 'help')..." autocomplete="off" spellcheck="false">
+            <button type="submit" class="term-submit-btn">EXECUTE</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         CONTACT
-    ============================================================ -->
-    <section class="contact" id="contact">
+    <!-- Contact & Signal Station -->
+    <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="contact-inner reveal-up">
-          <div class="section-label">Get in touch</div>
-          <h2 class="contact-heading">
-            Let's build something<br>
-            meaningful together.<br>
-            <em>I’d love to connect.</em>
-          </h2>
-          <p class="contact-sub">
+        <div class="contact-box">
+          <div class="section-badge-center">
+            <span class="pixel-badge"><i class="fa-solid fa-tower-broadcast"></i> TRANSMISSION CHANNEL</span>
+          </div>
+          <h2 class="contact-title text-center">Let's build something meaningful together.</h2>
+          <p class="contact-sub text-center">
             Always open to conversations with founders, engineering teams, and open source communities.<br>
             Available for <strong>Full-Time Roles</strong>, <strong>Freelance Projects</strong>, and <strong>GTM &amp; Product Analytics Collaboration</strong>.<br>
             If you share a passion for high-craft products, open access to technology, or community impact, let’s talk.
           </p>
-          <div class="contact-cta-group">
-            <a href="mailto:shivamraut.work@gmail.com" class="btn-primary magnetic" data-magnetic data-cursor-label="Say hello">
-              <i class="fa-solid fa-envelope"></i> shivamraut.work@gmail.com
+
+          <div class="contact-methods">
+            
+            <a href="mailto:shivamraut.work@gmail.com" class="contact-pill" id="emailPill">
+              <i class="fa-solid fa-envelope"></i>
+              <span>shivamraut.work@gmail.com</span>
+              <button class="copy-btn" id="btnCopyEmail" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
             </a>
-          </div>
-          <div class="contact-links-row">
-            <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="contact-alt-link magnetic" data-magnetic data-cursor-label="LinkedIn">
-              LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            <a href="https://linkedin.com/in/shivamraut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>linkedin.com/in/shivamraut1610</span>
             </a>
-            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="contact-alt-link magnetic" data-magnetic data-cursor-label="GitHub">
-              GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            <a href="https://github.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <i class="fa-brands fa-github"></i>
+              <span>github.com/ShivamRaut1610</span>
             </a>
-            <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="contact-alt-link magnetic" data-magnetic data-cursor-label="X">
-              @ShivamRaut1610 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            <a href="https://x.com/ShivamRaut1610" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <i class="fa-brands fa-x-twitter"></i>
+              <span>@ShivamRaut1610</span>
             </a>
+
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <span>Shivam Raut · Pune, India · 2026</span>
-      <span>Designed and built by hand. MIT Licensed.</span>
-      <a href="#intro" class="back-top magnetic" data-magnetic>↑ Back to top</a>
+    <div class="container footer-layout">
+      <div class="footer-left">
+        <span class="footer-code">&lt;SR /&gt; SHIVAM RAUT</span>
+        <span class="footer-sub">Designed with Deep Taste & Zero Corporate Fluff. Built in Vanilla HTML5 / CSS3 / ES6+.</span>
+      </div>
+      <div class="footer-right">
+        <span class="mono-tag">© 2026 SHIVAM RAUT · MIT LICENSED</span>
+      </div>
     </div>
   </footer>
 
-  <div class="toast" id="toast"></div>
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast"></div>
 
   <script src="app.js"></script>
 </body>

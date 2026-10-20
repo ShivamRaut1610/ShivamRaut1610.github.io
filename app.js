@@ -1,283 +1,386 @@
-/* ============================================================
-   SHIVAM RAUT PORTFOLIO — app.js
-   Custom cursor · Nav hide/show · Theme toggle · Scroll reveal
-   Magnetic buttons · Project filters · Keyboard nav
-   ============================================================ */
+// ==========================================================================
+// SHIVAM RAUT PORTFOLIO - HIGH-CRAFT DESIGN & LOGIC ENGINE
+// ==========================================================================
 
-(function () {
-  'use strict';
+document.addEventListener('DOMContentLoaded', () => {
 
-  /* ─────────────── HELPERS ─────────────── */
-  const qs  = (sel, root = document) => root.querySelector(sel);
-  const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
-
-  /* ─────────────── SCROLL PROGRESS ─────────────── */
-  const progressBar = qs('#scrollProgress');
-  function updateScrollProgress() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    if (progressBar) progressBar.style.width = pct + '%';
+  // 1. Dynamic Cursor Glow Tracker
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (cursorGlow) {
+    window.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
+    });
   }
 
-  /* ─────────────── CUSTOM CURSOR ─────────────── */
-  const cursor      = qs('#cursor');
-  const cursorInner = qs('#cursorInner');
-  const cursorLabel = qs('#cursorLabel');
+  // 2. Toast Notification Utility
+  const toast = document.getElementById('toast');
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
+  };
 
-  if (cursor && window.innerWidth > 900) {
-    let mouseX = 0, mouseY = 0;
-    let curX = 0, curY = 0;
-    let label = '';
+  // 3. Persona Switcher Engine (GTM / Design / AI)
+  const personaBtns = document.querySelectorAll('.persona-btn');
+  const heroHeading = document.getElementById('heroHeading');
+  const heroDesc = document.getElementById('heroDesc');
+  const currentPersonaTag = document.getElementById('currentPersonaTag');
+  const asciiArtBlock = document.getElementById('asciiArtBlock');
 
-    document.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    // Lerp loop for smooth cursor following
-    function lerp(a, b, t) { return a + (b - a) * t; }
-    function animateCursor() {
-      curX = lerp(curX, mouseX, 0.12);
-      curY = lerp(curY, mouseY, 0.12);
-      cursor.style.transform = `translate(${curX}px, ${curY}px)`;
-      requestAnimationFrame(animateCursor);
+  const personaData = {
+    gtm: {
+      tag: 'MODE: GTM & GROWTH OBSESSED',
+      heading: 'Where <span class="highlight-gtm">GTM Velocity</span> meets <span class="highlight-design">Thoughtful Design</span> and <span class="highlight-ai">Deterministic AI</span>.',
+      desc: 'I am a <strong>GTM & Design Engineer</strong> with a deep obsession with product distribution, self-serve funnels, and high-craft UI/UX. I build software that converts at first glance, feels buttery smooth, and solves critical real-world friction.',
+      ascii: `  ____  _     _                     ____             _   
+ / ___|| |__ (_)_   ____ _ _ __ ___ |  _ \\ __ _ _   _| |_ 
+ \\___ \\| '_ \\| \\ \\ / / _\` | '_ \` _ \\| |_) / _\` | | | | __|
+  ___) | | | | |\\ V / (_| | | | | | |  _ < (_| | |_| | |_ 
+ |____/|_| |_|_| \\_/ \\__,_|_| |_| |_|_| \\_\\__,_|\\__,_|\\__|
+ ========================================================
+ [★] FOCUS    : GTM Engineering × High-Craft Product Design
+ [★] FUNNELS  : Self-Serve Onramps · Conversion · Viral Loops
+ [★] AI STACK : FastAPI · LangChain · Nemotron · Deterministic Core
+ [★] LOCATION : Pune, India // Open for Forward Deployed Roles`
+    },
+    design: {
+      tag: 'MODE: PRODUCT DESIGN & HIGH-CRAFT UI/UX',
+      heading: 'Crafting <span class="highlight-design">Buttery UI/UX</span>, Micro-Physics, and <span class="highlight-gtm">Zero-Friction Flows</span>.',
+      desc: 'I understand <strong>Product Design from user psychology to pixel-level CSS</strong>. I eliminate translation loss between Figma and production code, creating software with Linear/Vercel-level visual taste and micro-interactions.',
+      ascii: `  ____  _____ ____ ___ ____ _   _ 
+ |  _ \\| ____/ ___|_ _/ ___| \\ | |
+ | | | |  _| \\___ \\| | |  _|  \\| |
+ | |_| | |___ ___) | | |_| | |\\  |
+ |____/|_____|____/___\\____|_| \\_|
+ ========================================================
+ [★] CRAFT    : High-Craft UI/UX · Obsidian Glass · Spatial Layout
+ [★] TOKENS   : Dynamic CSS Variables · Micro-Physics · 60fps
+ [★] FIGMA    : Zero Translation Loss (Concept to React/CSS)
+ [★] TASTE    : Dieter Rams Philosophy × Modern Cyber Aesthetic`
+    },
+    ai: {
+      tag: 'MODE: DETERMINISTIC AI & MULTI-AGENT ARCHITECT',
+      heading: 'Building <span class="highlight-ai">Zero-Hallucination AI</span> and <span class="highlight-gtm">Multi-Agent Systems</span>.',
+      desc: 'Architecting critical software under the philosophy: <strong>"Deterministic Math, Probabilistic Narration"</strong>. In finance and operations, LLMs must never compute numbers—they narrate verified mathematical truth.',
+      ascii: `     _    ___   ______     ______ _____ _____ __  __ ____  
+    / \\  |_ _| / ___\\ \\   / / ___|_   _| ____|  \\/  / ___| 
+   / _ \\  | |  \\___ \\\\ \\ / /\\___ \\ | | |  _| | |\\/| \\___ \\ 
+  / ___ \\ | |   ___) |\\ V /  ___) || | | |___| |  | |___) |
+ /_/   \\_\\___| |____/  \\_/  |____/ |_| |_____|_|  |_|____/ 
+ ========================================================
+ [★] ARCH     : FastAPI · PostgreSQL · Docker · Redis
+ [★] AGENTS   : NVIDIA Nemotron-3 · LangChain · Confidence Gating
+ [★] ACCURACY : Deterministic Mathematical Isolation (0% Error)
+ [★] AWARD    : All India Rank #2 at PFRDA National Hackathon`
+    },
+    analytics: {
+      tag: 'MODE: PRODUCT ANALYTICS & TELEMETRY',
+      heading: 'Translating <span class="highlight-gtm">Event Telemetry</span> into <span class="highlight-design">High-Conviction Growth</span>.',
+      desc: 'I instrument full-funnel product telemetry, analyze cohort drop-offs, and diagnose friction. I bridge product instrumentation and thoughtful UI/UX so software converts, activates, and retains without dark patterns.',
+      ascii: `  ____  ____   ___  ____  _   _  ____ _____ 
+ |  _ \\|  _ \\ / _ \\|  _ \\| | | |/ ___|_   _|
+ | |_) | |_) | | | | | | | | | | |     | |  
+ |  __/|  _ <| |_| | |_| | |_| | |___  | |  
+ |_|   |_| \\_\\\\___/|____/ \\___/ \\____| |_|  
+ ========================================================
+ [★] FOCUS    : Product Telemetry · Funnel Audits · Cohorts
+ [★] METRICS  : Activation Curves · LTV/CAC · Retention Loops
+ [★] STACK    : PostHog · Mixpanel · Custom Event Pipelines
+ [★] ETHOS    : Respectful Analytics (No Dark Patterns)`
     }
-    animateCursor();
+  };
 
-    // Cursor state on different element types
-    const hoverEls = qsa('a, button, [data-magnetic], .focus-card, .project, .wf-btn, .stack-col-items span, .social-link');
-    hoverEls.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.classList.add('is-hovering');
-        label = el.dataset.cursorLabel || '';
-        if (label) {
-          cursor.classList.add('has-label');
-          if (cursorLabel) cursorLabel.textContent = label;
-        }
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('is-hovering', 'has-label');
-        if (cursorLabel) cursorLabel.textContent = '';
-      });
-    });
-
-    // Hide cursor when leaving window
-    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
-  }
-
-  /* ─────────────── MAGNETIC BUTTONS ─────────────── */
-  qsa('[data-magnetic]').forEach(el => {
-    el.addEventListener('mousemove', e => {
-      const rect = el.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = (e.clientX - cx) * 0.35;
-      const dy = (e.clientY - cy) * 0.35;
-      el.style.transform = `translate(${dx}px, ${dy}px)`;
-    });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = '';
-    });
-  });
-
-  /* ─────────────── NAV — HIDE ON SCROLL DOWN / SHOW ON UP ─────────────── */
-  const nav = qs('#nav');
-  let lastY = 0;
-  let scrollTicking = false;
-
-  function handleNavScroll() {
-    const y = window.scrollY;
-    if (nav) {
-      nav.classList.toggle('scrolled', y > 30);
-      if (y > 80) {
-        nav.classList.toggle('hidden', y > lastY);
-      } else {
-        nav.classList.remove('hidden');
-      }
-    }
-    lastY = y;
-    updateScrollProgress();
-    scrollTicking = false;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!scrollTicking) {
-      requestAnimationFrame(handleNavScroll);
-      scrollTicking = true;
-    }
-  }, { passive: true });
-
-  /* ─────────────── HAMBURGER MENU ─────────────── */
-  const hamburger = qs('#hamburger');
-  const navDrawer = qs('#navDrawer');
-
-  if (hamburger && navDrawer) {
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.classList.toggle('open');
-      navDrawer.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', open);
-    });
-    qsa('[data-close-drawer]').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navDrawer.classList.remove('open');
-      });
-    });
-  }
-
-  /* ─────────────── DARK / LIGHT THEME ─────────────── */
-  const themeBtn   = qs('#themeBtn');
-  const themeIcon  = qs('#themeIcon');
-  const themeLabel = qs('#themeLabel');
-  const htmlEl     = document.documentElement;
-
-  // Load saved preference
-  const savedTheme = localStorage.getItem('sr-theme') || 'dark';
-  htmlEl.dataset.theme = savedTheme;
-  syncThemeUI(savedTheme);
-
-  function syncThemeUI(theme) {
-    if (!themeIcon || !themeLabel) return;
-    if (theme === 'light') {
-      themeIcon.className  = 'fa-solid fa-moon';
-      themeLabel.textContent = 'Dark';
-    } else {
-      themeIcon.className  = 'fa-solid fa-sun';
-      themeLabel.textContent = 'Light';
-    }
-  }
-
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const next = htmlEl.dataset.theme === 'dark' ? 'light' : 'dark';
-      htmlEl.dataset.theme = next;
-      localStorage.setItem('sr-theme', next);
-      syncThemeUI(next);
-    });
-  }
-
-  /* ─────────────── SCROLL REVEAL ─────────────── */
-  const revealEls = qsa('.reveal-up');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = parseInt(entry.target.dataset.delay || 0, 10);
-        setTimeout(() => {
-          entry.target.classList.add('revealed');
-        }, delay);
-        revealObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  revealEls.forEach(el => revealObs.observe(el));
-
-  /* ─────────────── PROJECT FILTERS ─────────────── */
-  const filterBtns = qsa('.wf-btn');
-  const projects   = qsa('.project[data-category]');
-
-  filterBtns.forEach(btn => {
+  personaBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      personaBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filter = btn.dataset.filter;
-      const dividers = qsa('.project-divider');
+      const persona = btn.getAttribute('data-persona');
+      const data = personaData[persona];
 
-      projects.forEach((proj, i) => {
-        const cats = proj.dataset.category.split(' ');
-        const show = filter === 'all' || cats.includes(filter);
+      if (data) {
+        if (heroHeading) heroHeading.innerHTML = data.heading;
+        if (heroDesc) heroDesc.innerHTML = data.desc;
+        if (currentPersonaTag) currentPersonaTag.textContent = data.tag;
+        if (asciiArtBlock) asciiArtBlock.textContent = data.ascii;
+        showToast(`Switched to ${persona.toUpperCase()} View`);
+      }
+    });
+  // 3B. Solar / Obsidian Theme Toggle Engine
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeText = document.getElementById('themeText');
 
-        if (show) {
-          proj.style.display = '';
-          proj.style.animation = 'fadeIn 0.4s ease both';
-          proj.style.animationDelay = (i * 50) + 'ms';
+  const savedTheme = localStorage.getItem('sr-cyber-theme') || 'obsidian';
+  if (savedTheme === 'solar') {
+    document.body.classList.remove('theme-obsidian');
+    document.body.classList.add('theme-solar');
+    if (themeIcon) themeIcon.className = 'fa-solid fa-moon';
+    if (themeText) themeText.textContent = 'Obsidian Mode';
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isSolar = document.body.classList.toggle('theme-solar');
+      document.body.classList.toggle('theme-obsidian', !isSolar);
+      const themeName = isSolar ? 'solar' : 'obsidian';
+      localStorage.setItem('sr-cyber-theme', themeName);
+      if (themeIcon) themeIcon.className = isSolar ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+      if (themeText) themeText.textContent = isSolar ? 'Obsidian Mode' : 'Solar Mode';
+      showToast(`Switched to ${isSolar ? 'Solar Light' : 'Obsidian Cyber'} mode`);
+    });
+  }
+  // A. Swatches
+  const swatches = document.querySelectorAll('.swatch-btn');
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      swatches.forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+
+      const color = swatch.getAttribute('data-color');
+      document.documentElement.style.setProperty('--accent-neon', color);
+      document.documentElement.style.setProperty('--accent-glow', `${color}45`);
+      document.documentElement.style.setProperty('--border-glow', `${color}75`);
+
+      showToast(`Accent Token Updated: ${color}`);
+    });
+  });
+
+  // B. Glassmorphism Blur Slider
+  const blurSlider = document.getElementById('blurSlider');
+  const blurVal = document.getElementById('blurVal');
+  if (blurSlider && blurVal) {
+    blurSlider.addEventListener('input', (e) => {
+      const val = `${e.target.value}px`;
+      document.documentElement.style.setProperty('--glass-blur', val);
+      blurVal.textContent = val;
+    });
+  }
+
+  // C. Scanlines & Grid Toggles
+  const btnToggleScanlines = document.getElementById('btnToggleScanlines');
+  const scanlineOverlay = document.getElementById('scanlineOverlay');
+  if (btnToggleScanlines && scanlineOverlay) {
+    btnToggleScanlines.addEventListener('click', () => {
+      scanlineOverlay.classList.toggle('hidden');
+      const isActive = !scanlineOverlay.classList.contains('hidden');
+      btnToggleScanlines.classList.toggle('active', isActive);
+      btnToggleScanlines.textContent = `Scanlines: ${isActive ? 'ON' : 'OFF'}`;
+      showToast(`Scanlines ${isActive ? 'Enabled' : 'Disabled'}`);
+    });
+  }
+
+  const btnToggleGrid = document.getElementById('btnToggleGrid');
+  const cyberGrid = document.getElementById('cyberGrid');
+  if (btnToggleGrid && cyberGrid) {
+    btnToggleGrid.addEventListener('click', () => {
+      cyberGrid.classList.toggle('hidden');
+      const isActive = !cyberGrid.classList.contains('hidden');
+      btnToggleGrid.classList.toggle('active', isActive);
+      btnToggleGrid.textContent = `Matrix Grid: ${isActive ? 'ON' : 'OFF'}`;
+      showToast(`Matrix Grid ${isActive ? 'Enabled' : 'Disabled'}`);
+    });
+  }
+
+  // 5. Project Filtering
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const projectCards = document.querySelectorAll('.project-master-card');
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filter = pill.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const categories = card.getAttribute('data-category') || '';
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeIn 0.3s ease-in-out';
         } else {
-          proj.style.display = 'none';
-        }
-      });
-
-      // Hide orphan dividers (simple: just hide all, then show the ones between visible projects)
-      const visibleProjects = projects.filter(p => p.style.display !== 'none');
-      dividers.forEach((div, i) => {
-        // Divider i sits between project i and i+1
-        const nextProject = projects[i + 1];
-        if (nextProject && nextProject.style.display !== 'none' && visibleProjects.includes(projects[i])) {
-          div.style.display = '';
-        } else {
-          div.style.display = 'none';
+          card.style.display = 'none';
         }
       });
     });
   });
 
-  // Inject keyframe if not there
-  if (!document.querySelector('#sr-keyframes')) {
-    const style = document.createElement('style');
-    style.id = 'sr-keyframes';
-    style.textContent = `@keyframes fadeIn { from { opacity:0; transform:translateY(16px);} to { opacity:1; transform:translateY(0); } }`;
-    document.head.appendChild(style);
+  // 6. Interactive Command Terminal
+  const terminalForm = document.getElementById('terminalForm');
+  const terminalInput = document.getElementById('terminalInput');
+  const terminalScreen = document.getElementById('terminalScreen');
+
+  const termResponses = {
+    help: `Available commands:
+  • <span class="highlight">gtm</span>       : Why I'm obsessed with GTM engineering & distribution
+  • <span class="highlight">design</span>    : My Product Design & UI/UX principles
+  • <span class="highlight">projects</span>  : Direct links to my 5 flagship architectures
+  • <span class="highlight">whoami</span>    : Background, education & hackathon ranking
+  • <span class="highlight">contact</span>   : Signal transmission coordinates
+  • <span class="highlight">clear</span>     : Wipe terminal buffer`,
+
+    gtm: `[GTM ENGINEERING PHILOSOPHY]
+-------------------------------------------------------
+Code without adoption is zero-yield. I build at the revenue
+boundary: self-serve activation loops, viral campus referrals,
+and product analytics that drop onboarding friction to zero.
+Proven in PensionQuest (AIR #2) where gamified funnels solved
+a national 92% youth abandonment problem.`,
+
+    design: `[PRODUCT DESIGN & UI/UX MANIFESTO]
+-------------------------------------------------------
+Taste is the ultimate moat. 
+1. Frictionless Onboarding: Explain value in < 3 seconds.
+2. Tactile Ergonomics: 60fps micro-animations, obsidian glass.
+3. Zero Translation Loss: I design in Figma and code directly
+   into clean, performant CSS/React.`,
+
+    projects: `[FLAGSHIP ARCHITECTURES]
+-------------------------------------------------------
+1. PensionQuest : AIR #2 Winner · Gamified NPS & Voice AI
+2. Pulses.life  : Live Demo · Voice-First Multilingual Healthcare
+3. Kalpataru    : AgriTech OS Architecture (140M Farmers)
+4. Arthvo       : Gamified Wealth Universe (Next.js 16)
+5. CampusKart   : Live Demo · 17-Screen P2P Marketplace
+6. TokenSense   : Open Source DevTools · SSoC Season 5`,
+
+    pulses: `[PROJECT: PULSES.LIFE]
+-------------------------------------------------------
+• Problem  : Language barrier to emergency healthcare in Bharat
+• Solution : Voice-first triage in 22 scheduled Indian languages
+• Stack    : React 18 · Sarvam AI · Groq · CGHS Hospital DB
+• Status   : Live Demo at shivamraut1610.github.io/Pulses.life/`,
+
+    kalpataru: `[PROJECT: KALPATARU LABS]
+-------------------------------------------------------
+• Vision   : Full-stack operating system for Indian agriculture
+• Reach    : Designed for 140M smallholder farm households
+• Ethos    : "If it doesn't work on 2G in Bundelkhand, redesign it"
+• Moat     : Compounding data flywheel across 12 products`,
+
+    opensource: `[ETHOS: OPEN SOURCE & VOLUNTEERING]
+-------------------------------------------------------
+• Conviction : Technology access is a fundamental human right
+• Community  : SSoC Season 5 Contributor (LocalMind & TokenSense)
+• Volunteer  : Mentoring student builders & local grassroots tech
+• Standard   : Zero faking, zero performative hype, pure craft`,
+
+    analytics: `[EXPERTISE: PRODUCT ANALYTICS]
+-------------------------------------------------------
+• Audits     : Drop-off diagnostics, cohort retention curves
+• Loops      : Organic referral vectors & activation mechanics
+• Stack      : PostHog, Mixpanel, Custom SQL telemetry
+• Philosophy : Respectful measurement with zero dark patterns`,
+
+    whoami: `[DOSSIER: SHIVAM RAUT]
+-------------------------------------------------------
+• Roles      : GTM & Design Engineer | AI Systems Builder
+• Education  : Computer Engineering @ MIT AOE Pune
+• Hackathons : All India Rank #2 @ PFRDA National Hackathon
+• Certs      : Oracle Certified Associate SQL | IIT Ropar AI Minor
+• OpenSource : SSoC Season 5 Contributor (LocalMind)`,
+
+    contact: `[TRANSMISSION CHANNELS]
+-------------------------------------------------------
+• Email    : shivamraut.work@gmail.com
+• LinkedIn : linkedin.com/in/shivamraut1610
+• GitHub   : github.com/ShivamRaut1610
+• X/Twitter: @ShivamRaut1610`
+  };
+
+  if (terminalForm && terminalInput && terminalScreen) {
+    terminalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputVal = terminalInput.value.trim().toLowerCase();
+      if (!inputVal) return;
+
+      // Append user command
+      const cmdLine = document.createElement('div');
+      cmdLine.className = 'term-line cmd';
+      cmdLine.innerHTML = `<span class="term-prompt">shivam@fde:~$</span> ${escapeHtml(inputVal)}`;
+      terminalScreen.appendChild(cmdLine);
+
+      if (inputVal === 'clear') {
+        terminalScreen.innerHTML = '';
+      } else {
+        const resLine = document.createElement('div');
+        resLine.className = 'term-line res';
+        if (termResponses[inputVal]) {
+          resLine.innerHTML = `<pre style="font-family: inherit; white-space: pre-wrap;">${termResponses[inputVal]}</pre>`;
+        } else {
+          resLine.innerHTML = `command not recognized: <strong>${escapeHtml(inputVal)}</strong>. Type <span class="highlight">help</span> for available commands.`;
+        }
+        terminalScreen.appendChild(resLine);
+      }
+
+      terminalInput.value = '';
+      terminalScreen.scrollTop = terminalScreen.scrollHeight;
+    });
   }
 
-  /* ─────────────── SMOOTH NAV LINK ACTIVE HIGHLIGHTING ─────────────── */
-  const sections  = qsa('section[id]');
-  const navLinks  = qsa('.nav-link');
+  // 7. Clipboard Buttons
+  const btnCopyAscii = document.getElementById('btnCopyAscii');
+  if (btnCopyAscii && asciiArtBlock) {
+    btnCopyAscii.addEventListener('click', () => {
+      navigator.clipboard.writeText(asciiArtBlock.textContent);
+      showToast('ASCII Dossier Copied to Clipboard!');
+    });
+  }
 
-  const sectionObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
+  const btnCopyEmail = document.getElementById('btnCopyEmail');
+  if (btnCopyEmail) {
+    btnCopyEmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      navigator.clipboard.writeText('shivamraut.work@gmail.com');
+      showToast('Email Copied: shivamraut.work@gmail.com');
+    });
+  }
+
+  // 8. Mobile Navigation Toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const isVisible = navMenu.style.display === 'flex';
+      navMenu.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) {
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '100%';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.background = 'rgba(6, 8, 13, 0.98)';
+        navMenu.style.padding = '20px';
+        navMenu.style.borderBottom = '1px solid var(--border-glow)';
       }
     });
-  }, { rootMargin: '-40% 0px -40% 0px' });
-
-  sections.forEach(s => sectionObs.observe(s));
-
-  /* ─────────────── TOAST ─────────────── */
-  function showToast(msg, duration = 2800) {
-    const toast = qs('#toast');
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), duration);
   }
 
-  /* ─────────────── COPY EMAIL ON CLICK ─────────────── */
-  const emailLink = qs('a[href^="mailto:"]');
-  if (emailLink) {
-    emailLink.addEventListener('click', e => {
-      // Only copy on middle/ctrl click, let normal click open mail client
-      if (e.ctrlKey || e.metaKey || e.button === 1) {
-        e.preventDefault();
-        const email = emailLink.getAttribute('href').replace('mailto:', '');
-        navigator.clipboard?.writeText(email).then(() => {
-          showToast('📋 Email copied to clipboard');
-        });
-      }
+  // 9. 3D Card Tilt & Micro-Physics on Mousemove
+  const tiltCards = document.querySelectorAll('.project-master-card, .pillar-card, .lab-card, .cyber-portrait-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotX = ((y - cy) / cy) * -4;
+      const rotY = ((x - cx) / cx) * 4;
+      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-3px)`;
     });
-  }
-
-  /* ─────────────── KEYBOARD NAV SHORTCUT ─────────────── */
-  document.addEventListener('keydown', e => {
-    if (e.key === 't' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      const active = document.activeElement;
-      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA')) return;
-      themeBtn && themeBtn.click();
-    }
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
 
-  /* ─────────────── ACTIVE NAV LINK STYLE ─────────────── */
-  const activeStyle = document.createElement('style');
-  activeStyle.textContent = `.nav-link.active { color: var(--text); } .nav-link.active::after { width: 100%; }`;
-  document.head.appendChild(activeStyle);
+  function escapeHtml(text) {
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
 
-  /* ─────────────── INIT ─────────────── */
-  updateScrollProgress();
-  console.log('%c Shivam Raut — Portfolio v2.0 ', 'background:#e8b86d;color:#0e0e0c;font-family:monospace;font-weight:bold;padding:4px 10px;border-radius:4px;');
-
-})();
+});
