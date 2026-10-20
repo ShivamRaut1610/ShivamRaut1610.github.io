@@ -33,6 +33,7 @@
   --font-display: 'Space Grotesk', -apple-system, sans-serif;
   --font-body: 'Outfit', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-handwriting: 'Caveat', cursive, sans-serif;
 
   /* Transitions & Shadows */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,7 +48,11 @@ body.theme-solar {
   --bg-surface-hover: rgba(255, 255, 255, 0.98);
   --bg-terminal: #111827;
   --border-subtle: rgba(15, 23, 42, 0.12);
-  --border-glow: rgba(0, 180, 140, 0.5);
+  --border-glow: rgba(0, 135, 102, 0.4);
+  --accent-neon: #008766;
+  --accent-cyan: #0284c7;
+  --accent-glow: rgba(0, 135, 102, 0.22);
+  --accent-emerald: #059669;
   --text-pure: #0f172a;
   --text-main: #1e293b;
   --text-muted: #475569;
@@ -63,6 +68,20 @@ body.theme-solar .system-telemetry-bar {
   background: rgba(246, 244, 238, 0.92);
   border-bottom: 1px solid var(--border-subtle);
 }
+body.theme-solar .telemetry-inner .mono-tag {
+  color: #334155;
+}
+body.theme-solar .status-indicator.live {
+  background-color: #008766;
+  box-shadow: 0 0 8px rgba(0, 135, 102, 0.6);
+}
+body.theme-solar .telemetry-action {
+  color: #008766;
+  font-weight: 700;
+}
+body.theme-solar .telemetry-action:hover {
+  color: #005c45;
+}
 body.theme-solar .navbar {
   background: rgba(246, 244, 238, 0.92);
   border-bottom: 1px solid var(--border-subtle);
@@ -77,9 +96,77 @@ body.theme-solar .nav-item {
   border-bottom-color: var(--border-subtle);
 }
 body.theme-solar .nav-brand-logo {
-  background: linear-gradient(135deg, rgba(0, 180, 140, 0.12), rgba(168, 85, 247, 0.08));
-  border-color: rgba(0, 180, 140, 0.4);
-  box-shadow: 0 4px 14px rgba(0, 180, 140, 0.15);
+  background: #0c111d;
+  border-color: rgba(0, 135, 102, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+body.theme-solar .nav-brand-role {
+  color: #008766;
+  opacity: 1;
+  font-weight: 700;
+}
+body.theme-solar .pixel-badge {
+  background: rgba(0, 135, 102, 0.08);
+  border-color: #008766;
+  color: #008766;
+  font-weight: 700;
+}
+body.theme-solar .pixel-badge.secondary {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: #9333ea;
+  color: #9333ea;
+}
+body.theme-solar .highlight-gtm {
+  background: linear-gradient(135deg, #008766 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body.theme-solar .stat-num {
+  color: #008766;
+}
+body.theme-solar .persona-switcher {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+body.theme-solar .persona-btn {
+  color: var(--text-main);
+}
+body.theme-solar .persona-btn.active {
+  background: #008766;
+  color: #ffffff;
+  border-color: #008766;
+  box-shadow: 0 2px 10px rgba(0, 135, 102, 0.25);
+}
+body.theme-solar .badge-award {
+  background: rgba(0, 135, 102, 0.08);
+  border-color: #008766;
+  color: #008766;
+}
+body.theme-solar .card-visual-tag {
+  background: rgba(0, 135, 102, 0.1);
+  border-color: rgba(0, 135, 102, 0.3);
+  color: #008766;
+}
+body.theme-solar .filter-pill.active {
+  background: #008766;
+  color: #ffffff;
+  border-color: #008766;
+  box-shadow: 0 2px 10px rgba(0, 135, 102, 0.25);
+}
+body.theme-solar .btn-cyber {
+  background: #008766;
+  color: #ffffff;
+  border-color: #008766;
+}
+body.theme-solar .btn-cyber:hover {
+  background: #006b52;
+  border-color: #006b52;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 135, 102, 0.35);
+}
+body.theme-solar .sig-name,
+body.theme-solar .mono-num {
+  color: #008766;
 }
 body.theme-solar .btn-icon {
   background: rgba(0, 0, 0, 0.04);
@@ -316,6 +403,20 @@ img, svg, video, canvas {
   height: 100%;
   display: block;
 }
+.brand-logo-svg .logo-s-path {
+  stroke: #00f5d4;
+}
+.brand-logo-svg .logo-r-path {
+  stroke: #ffffff;
+}
+.brand-logo-svg .logo-bracket {
+  stroke: #00f5d4;
+}
+.brand-logo-svg .logo-pulse-circle {
+  fill: #00f5d4;
+  animation: pulseDot 2s infinite ease-in-out;
+  transform-origin: 33.5px 6.5px;
+}
 .logo-pulse-circle {
   animation: pulseDot 2s infinite ease-in-out;
   transform-origin: 33.5px 6.5px;
@@ -346,12 +447,31 @@ img, svg, video, canvas {
   gap: 1px;
 }
 .nav-brand-name {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-family: var(--font-handwriting);
+  font-size: 1.65rem;
+  font-weight: 700;
   color: var(--text-pure);
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  transform-origin: left center;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.nav-brand:hover .nav-brand-name {
+  transform: rotate(0deg) scale(1.05);
+  color: var(--accent-neon);
+}
+.hero-human-name {
+  font-family: var(--font-handwriting);
+  font-size: 1.55em;
+  font-weight: 700;
+  color: var(--text-pure);
+  display: inline-block;
+  transform: rotate(-2deg);
+  margin: 0 4px;
+  vertical-align: -0.06em;
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 .nav-brand-role {
   font-family: var(--font-mono);
@@ -359,7 +479,7 @@ img, svg, video, canvas {
   color: var(--accent-neon);
   font-weight: 600;
   letter-spacing: 0.08em;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 .brand-bracket { color: var(--accent-neon); font-family: var(--font-mono); }
 .brand-code { color: var(--accent-neon); }
@@ -1018,10 +1138,14 @@ section[id] {
   gap: 4px;
 }
 .sig-name {
-  font-family: var(--font-display);
+  font-family: var(--font-handwriting);
   font-weight: 700;
   color: var(--accent-neon);
-  font-size: 1rem;
+  font-size: 1.85rem;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  transform: rotate(-1deg);
+  line-height: 1;
 }
 .sig-title {
   font-family: var(--font-mono);
@@ -1619,7 +1743,7 @@ section[id] {
   .navbar { padding: 10px 0; }
   .nav-container { gap: 10px; }
   .nav-brand-role { display: none; }
-  .nav-brand-name { font-size: 1rem; }
+  .nav-brand-name { font-size: 1.45rem; }
   .persona-switcher { display: none; }
 
   .nav-mobile-toggle {
@@ -1897,7 +2021,7 @@ section[id] {
 @media (max-width: 360px) {
   .container { padding: 0 10px; }
   .nav-brand-logo { width: 34px; height: 34px; }
-  .nav-brand-name { font-size: 0.9rem; }
+  .nav-brand-name { font-size: 1.3rem; }
   .nav-mobile-toggle { width: 36px; height: 36px; font-size: 1rem; }
 
   /* Hero */
