@@ -1734,9 +1734,10 @@ section[id] {
   /* Hero */
   .hero-heading { font-size: 1.85rem; }
   .hero-desc { font-size: 0.95rem; }
-  .hero-stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-pill { padding: 9px 10px; min-width: 0; }
   .stat-num { font-size: 1.1rem; }
-  .stat-label { font-size: 0.65rem; }
+  .stat-label { font-size: 0.65rem; line-height: 1.25; word-break: break-word; }
   .badge-row { gap: 7px; flex-wrap: wrap; }
   .pixel-badge { font-size: 0.67rem; padding: 3px 9px; }
   .portrait-image-wrapper { height: 180px; }
