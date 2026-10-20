@@ -10,7 +10,7 @@
 
 ## 🚀 Overview
 
-The official developer portfolio and systems engineering showcase for **Shivam Raut** (Computer Engineering, MIT AOE Pune; All India Rank #2, PFRDA National Hackathon 2026).
+The official developer portfolio and systems engineering showcase for **Shivam Raut** (Computer Engineering, MIT AOE Pune; 2nd Runner Up, PFRDA National Hackathon 2026).
 
 Engineered with high visual fidelity using an **Obsidian Dark & Cyber Glass** aesthetic. Built entirely with Vanilla web technologies (zero bloated framework bundles, near-instant 100/100 Lighthouse performance score).
 

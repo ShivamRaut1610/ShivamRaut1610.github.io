@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
  [★] ARCH     : FastAPI · PostgreSQL · Docker · Redis
  [★] AGENTS   : NVIDIA Nemotron-3 · LangChain · Confidence Gating
  [★] ACCURACY : Deterministic Mathematical Isolation (0% Error)
- [★] AWARD    : All India Rank #2 at PFRDA National Hackathon`
+ [★] AWARD    : 2nd Runner Up at PFRDA National Hackathon`
     },
     analytics: {
       tag: 'MODE: PRODUCT ANALYTICS & TELEMETRY',
@@ -255,7 +255,7 @@ I build welcoming onramps, frictionless discovery flows,
 and respectful product analytics—helping users experience
 genuine value without manipulation or dark patterns.
 
-Proven in PensionQuest (AIR #2): gamified funnels helped
+Proven in PensionQuest (2nd Runner Up): gamified funnels helped
 92% of young Indians finally understand their NPS accounts.`,
 
     design: `[PRODUCT DESIGN & UI/UX MANIFESTO]
@@ -268,7 +268,7 @@ Taste is the ultimate moat.
 
     projects: `[FLAGSHIP ARCHITECTURES]
 -------------------------------------------------------
-1. PensionQuest : AIR #2 Winner · Gamified NPS & Voice AI
+1. PensionQuest : 2nd Runner Up · Gamified NPS & Voice AI
 2. Pulses.life  : Live Demo · Voice-First Multilingual Healthcare
 3. Kalpataru    : AgriTech OS Architecture (140M Farmers)
 4. Arthvo       : Gamified Wealth Universe (Next.js 16)
@@ -310,7 +310,7 @@ Taste is the ultimate moat.
 • Roles      : GTM & Design Engineer | AI Systems Builder
 • Location   : Pune, India
 • Education  : Computer Engineering @ MIT AOE Pune
-• Hackathons : All India Rank #2 @ PFRDA National Hackathon
+• Hackathons : 2nd Runner Up @ PFRDA National Hackathon
 • Certs      : Oracle Certified Associate SQL | IIT Ropar AI Minor
 • OpenSource : SSoC Season 5 Contributor (LocalMind & TokenSense)
 • Values     : Authentic purpose, open access, zero faking`,
@@ -332,7 +332,7 @@ Taste is the ultimate moat.
 
     pensionquest: `[PROJECT: PENSIONQUEST]
 -------------------------------------------------------
-• Award    : All India Rank #2 Winner (PFRDA National Hackathon 2026)
+• Award    : 2nd Runner Up (PFRDA National Hackathon 2026)
 • Challenge: 92% of working Indians abandon NPS accounts
 • Solution : Gamified quest loops, real-time math, vernacular voice AI
 • Stack    : FastAPI · React Native · PostgreSQL · Redis · Docker
