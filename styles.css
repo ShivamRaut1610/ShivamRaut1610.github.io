@@ -1621,49 +1621,6 @@ section[id] {
   .persona-switcher { display: none; }
   .theme-toggle-btn { width: 100%; justify-content: center; margin-top: 4px; }
 
-  /* Mobile Persona Selector in Dropdown */
-  .mobile-persona-header {
-    display: block;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-subtle);
-    margin-bottom: 8px;
-  }
-  .mobile-menu-label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
-  .mobile-persona-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
-  }
-  .m-persona-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 8px 4px;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-subtle);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .m-persona-btn.active {
-    background: var(--accent-glow);
-    border-color: var(--accent-neon);
-    color: var(--accent-neon);
-    box-shadow: 0 0 10px var(--accent-glow);
-  }
-
   /* Telemetry Bar */
   .telemetry-right { display: none; }
   .telemetry-divider { display: none; }

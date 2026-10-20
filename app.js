@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // 3. Persona Switcher Engine (GTM / Design / AI)
-  const personaBtns = document.querySelectorAll('.persona-btn, .m-persona-btn');
+  const personaBtns = document.querySelectorAll('.persona-btn');
   const heroHeading = document.getElementById('heroHeading');
   const heroDesc = document.getElementById('heroDesc');
   const currentPersonaTag = document.getElementById('currentPersonaTag');
