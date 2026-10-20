@@ -37,6 +37,8 @@ portfolio/
 ├── index.html        # Semantic single-page portfolio layout
 ├── styles.css        # Custom design system, typography tokens & glassmorphism
 ├── app.js            # Interactive filters, smooth navigation & UI state handlers
+├── favicon.svg       # Custom SR cyber monogram vector favicon
+├── favicon.png       # High-res 512x512 PWA & bookmark icon
 ├── .gitignore        # Clean git exclusions
 ├── LICENSE           # MIT open-source license
 └── README.md         # Documentation
