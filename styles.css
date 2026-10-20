@@ -83,6 +83,7 @@ body.theme-solar .cyber-portrait-card {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   font-size: 16px;
   background-color: var(--bg-deep);
   color-scheme: dark;
@@ -712,9 +713,11 @@ body {
 .badge-mini.warning { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
 
 /* Section Styling */
-.section {
+.section,
+section[id] {
   padding: 85px 0;
   position: relative;
+  scroll-margin-top: 80px;
 }
 .section-badge-center {
   display: flex;
